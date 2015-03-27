@@ -98,38 +98,51 @@
             el.style.backgroundColor = "#40E0D0";
             el.style.zIndex = 1000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
 
-            console.log(el);
-
             el.style.left = (pos[0] - size / 2) + "px"; // could also use percent here
             el.style.bottom = (pos[1] - size / 2) + "px";
 
             return el;
-
         }
 
-        function draw_income(place) {
-            var variable = parseInt(place.income_med);
+        function draw_income_m(place) {
+            var variable = parseInt(place.income_med_m);
             var county_code = parseInt(place.code[0]); // First digit gives county code
             var size = Math.sqrt(variable);
             var pos = calc_position(place);
 
             var el = document.createElement('div');
             el.className = 'place admin-' + place.code.length;
-            el.style.width = 7 + 'px';
+            el.style.width = 8 + 'px';
             el.style.height = size + 'px';
             el.title = place.name;
             el.style.backgroundColor = "#2222aa";
-            el.style.zIndex = 10000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
-
-            console.log(el);
+            el.style.zIndex = 10000 + Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
 
             el.style.left = pos[0]  + "px"; // could also use percent here
             el.style.bottom = pos[1] + "px";
 
             return el;
-
         }
 
+        function draw_income_f(place) {
+            var variable = parseInt(place.income_med_f);
+            var county_code = parseInt(place.code[0]); // First digit gives county code
+            var size = Math.sqrt(variable);
+            var pos = calc_position(place);
+
+            var el = document.createElement('div');
+            el.className = 'place admin-' + place.code.length;
+            el.style.width = 8 + 'px';
+            el.style.height = size + 'px';
+            el.title = place.name;
+            el.style.backgroundColor = "#aa2222";
+            el.style.zIndex = 10000 + Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
+
+            el.style.left = pos[0]+9  + "px"; // could also use percent here
+            el.style.bottom = pos[1] + "px";
+
+            return el;
+        }
 
         // draw a map from an array of data
 
@@ -141,9 +154,11 @@
                 var place = data[i];
                 console.log(place);
                 el_pop = draw_population(place)
-                el_inc = draw_income(place)
-                figure.appendChild(el_inc);
+                el_inc_m = draw_income_m(place)
+                el_inc_f = draw_income_f(place)
                 figure.appendChild(el_pop);
+                figure.appendChild(el_inc_m);
+                figure.appendChild(el_inc_f);
 
             }
         }
