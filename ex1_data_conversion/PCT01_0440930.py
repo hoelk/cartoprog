@@ -23,6 +23,7 @@ def read_xls_sheet(sheet):
 
     return(data)
 
+
 def parse_field_latlng(x):
     x = x.replace('lat:', '')
     x = x.replace('lon:', '')
@@ -31,24 +32,23 @@ def parse_field_latlng(x):
     x = x.replace(';', ' ')
     x = x.split()
 
-    return x
+    res = {}
+    res['lat'] = float(x[0])
+    res['lon'] = float(x[1])
+
+    return res
 
 
 # Process the fields
 def parse_places_data(sheet):
     for row in sheet:
         row['code'] = int(row['code'])
-        row['lat'] = float(parse_field_latlng(row['latlng'])[0])
-        row['lon'] = float(parse_field_latlng(row['latlng'])[1])
+        row['lat'] = parse_field_latlng(row['latlng'])['lat']
+        row['lon'] = parse_field_latlng(row['latlng'])['lon']
         try:
             row['population'] = int(row['population'])
         except ValueError:
             print('No population data')
-
-
-
-
-
 
 
 sheet = read_xls_sheet(xlrd_sheet)
