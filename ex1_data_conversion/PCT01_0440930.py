@@ -1,25 +1,29 @@
-import xlrd, csv, os
+__author__      = "Stefan Fleck"
 
+import xlrd, csv
 
-os.chdir('ex1_data_conversion')
 
 # open file
 xlrd_sheet = xlrd.open_workbook('assignment01.xlsx')
 xlrd_sheet = xlrd_sheet.sheets()[0]
 
-# read header values into the list
 
-# Read in rows, store in data structure. I want to be able to refer to rows
-# by key rather than by index so i'll use a list of dictionaries
-def read_xls_sheet(sheet):
+# I want to be able to refer to rows by key rather than by index so i'll use a
+# list of dictionaries instead of a list of lists as in the lecture.
+# Filtering by county also happens in this step
+def read_xls_sheet(sheet, county_filter=3):
     keys = [sheet.cell(0, col_index).value for col_index in range(0, sheet.ncols)]
     data = []
 
     for row_index in range(1, sheet.nrows):
-        print("Processing row" + str(row_index) + "...")
-        cell = {keys[col_index]: sheet.cell(row_index, col_index).value
+        row = {keys[col_index]: sheet.cell(row_index, col_index).value
             for col_index in range(0, sheet.ncols)}
-        data.append(cell)
+
+        if str(row['code'])[0] == str(county_filter):
+            print('row ' + str(int(row['code'])) + ' appended')
+            data.append(row)
+        else:
+            print('row ' + str(int(row['code'])) + ' skipped')
 
     return(data)
 
@@ -39,47 +43,29 @@ def parse_field_latlng(x):
     return res
 
 
-# Process the fields
 def parse_places_data(sheet):
     for row in sheet:
+        # Recode and split latlang field
         row['code'] = int(row['code'])
         row['level'] = int(row['level'])
         row['lat'] = parse_field_latlng(row['latlng'])['lat']
         row['lon'] = parse_field_latlng(row['latlng'])['lon']
         del row['latlng']
+
         try:
             row['population'] = int(row['population'])
         except ValueError:
-            print('No population data')
+            pass
 
 
+# Ececute function
 sheet = read_xls_sheet(xlrd_sheet)
 parse_places_data(sheet)
 
 
-def print_sheet(dat):
-     for row in sheet:
-         print(row)
-
-print_sheet(sheet)
-
-print(str(sheet[1].keys))
-
-for key in sheet[1].keys():
-    print(key)
-
-
-# write rows to the new file
-
-names = ['code', 'name', 'population', 'area', 'type', 'level', 'lat', 'lon']
-
-output = open('dict.csv', 'w', newline='')
-writer = csv.DictWriter(output, fieldnames = names)
-writer.writeheader()
-writer.writerows(sheet)
-
-
-#
-#
-# # close the file again
-# outfile.close()
+## Output to csv
+fields = ['code', 'name', 'population', 'area', 'type', 'level', 'lat', 'lon']
+with open('dict.csv', 'w', newline='') as output:
+    writer = csv.DictWriter(output, fieldnames = fields)
+    writer.writeheader()
+    writer.writerows(sheet)
