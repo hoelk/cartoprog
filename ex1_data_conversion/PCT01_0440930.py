@@ -1,15 +1,13 @@
-import xlrd
-import csv
+import xlrd, csv, os
 
-import sys
-print(sys.version)
+
+os.chdir('ex1_data_conversion')
 
 # open file
 xlrd_sheet = xlrd.open_workbook('assignment01.xlsx')
 xlrd_sheet = xlrd_sheet.sheets()[0]
 
 # read header values into the list
-
 
 # Read in rows, store in data structure. I want to be able to refer to rows
 # by key rather than by index so i'll use a list of dictionaries
@@ -25,14 +23,32 @@ def read_xls_sheet(sheet):
 
     return(data)
 
+def parse_field_latlng(x):
+    x = x.replace('lat:', '')
+    x = x.replace('lon:', '')
+    x = x.replace('E', '')
+    x = x.replace('N', '')
+    x = x.replace(';', ' ')
+    x = x.split()
+
+    return x
+
+
 # Process the fields
 def parse_places_data(sheet):
     for row in sheet:
         row['code'] = int(row['code'])
+        row['lat'] = float(parse_field_latlng(row['latlng'])[0])
+        row['lon'] = float(parse_field_latlng(row['latlng'])[1])
         try:
             row['population'] = int(row['population'])
         except ValueError:
             print('No population data')
+
+
+
+
+
 
 
 sheet = read_xls_sheet(xlrd_sheet)
