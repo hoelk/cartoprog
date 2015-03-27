@@ -34,8 +34,7 @@
         }
 
         .map .admin-3 {
-            display: none;
-            /* filter out areas we dont care about */
+
         }
     </style>
 
@@ -69,7 +68,7 @@
 
         // draw a map from an array of data
         function draw_map(data) {
-
+            console.log('drawing map');
             var figure = document.getElementById('map1');
 
             for (var i = 0; i < data.length; i++) {
@@ -92,8 +91,10 @@
                     el.style.width = size + 'px';
                     el.style.height = size + 'px';
                     el.title = place.name;
-                    el.style.backgroundColor = county_colors[county_code - 1];
+                    el.style.backgroundColor = "#40E0D0";
                     el.style.zIndex = 1000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
+
+                    console.log(el);
 
                     // adapt mercator coordinates to our viewport (derived experimentally)
                     // center point of data to center point of map, and then apply scale factor (50000)
@@ -109,7 +110,8 @@
         }
 
         // load data, call our function when loaded
-        d3.csv('places-AT-cleaned.csv', draw_map);
+        d3.csv('income-AT.csv', draw_map);
+
     </script>
 
 </body>
