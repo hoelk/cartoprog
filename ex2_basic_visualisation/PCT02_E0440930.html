@@ -33,9 +33,16 @@
             position: absolute;
         }
 
-        .map .admin-3 {
-
+        .map .place .bar {
+            display: inline-block;
+            border: 1px solid #cccccc;
+            background-color: #dddddd;
+            vertical-align: middle;
+            border-radius: 1px;
+            position: absolute;
         }
+
+        .map .admin-3 {}
     </style>
 
 </head>
@@ -66,52 +73,88 @@
             "#40E0D0"
         ];
 
+        function draw_population(place) {
+            var population = parseInt(place.population);
+            var county_code = parseInt(place.code[0]); // First digit gives county code
+            var latlng = [parseFloat(place.lat), parseFloat(place.lon)];
+
+            var size = Math.sqrt(population / 100);
+
+            // position the point
+            // adapt mercator coordinates to our viewport (derived experimentally)
+            // center point of data to center point of map, and then apply scale factor (50000)
+            var projected = project_mercator(latlng);
+            var pos_x = (projected[0] - 0.5268) * 50000;
+            var pos_y = (projected[1] - 0.646) * 50000;
+
+            var el = document.createElement('div');
+            el.className = 'place admin-' + place.code.length;
+            el.style.width = size + 'px';
+            el.style.height = size + 'px';
+            el.title = place.name;
+            el.style.backgroundColor = "#40E0D0";
+            el.style.zIndex = 1000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
+
+            console.log(el);
+
+            el.style.left = (pos_x - size / 2) + "px"; // could also use percent here
+            el.style.bottom = (pos_y - size / 2) + "px";
+
+            return el;
+
+        }
+
+        function draw_income(place) {
+            var variable = parseInt(place.income_med);
+            var county_code = parseInt(place.code[0]); // First digit gives county code
+            var latlng = [parseFloat(place.lat), parseFloat(place.lon)];
+
+            var size = Math.sqrt(variable / 100);
+
+            // position the point
+            // adapt mercator coordinates to our viewport (derived experimentally)
+            // center point of data to center point of map, and then apply scale factor (50000)
+            var projected = project_mercator(latlng);
+            var pos_x = (projected[0] - 0.5268) * 50000;
+            var pos_y = (projected[1] - 0.646) * 50000;
+
+            var el = document.createElement('div');
+            el.className = 'place admin-' + place.code.length;
+            el.style.width = 6 + 'px';
+            el.style.height = size + 'px';
+            el.title = place.name;
+            el.style.backgroundColor = "#40E0D0";
+            el.style.zIndex = 1000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
+
+            console.log(el);
+
+            el.style.left = (pos_x - size / 2) + "px"; // could also use percent here
+            el.style.bottom = (pos_y - size / 2) + "px";
+
+            return el;
+
+        }
+
+
         // draw a map from an array of data
+
         function draw_map(data) {
             console.log('drawing map');
             var figure = document.getElementById('map1');
 
             for (var i = 0; i < data.length; i++) {
                 var place = data[i];
-
-                var area = parseFloat(place.area);
-                if (area) {
-
-                    var size = Math.sqrt(area);
-                    var population = parseInt(place.population);
-                    var county_code = parseInt(place.code[0]); // First digit gives county code
-
-                    size = Math.sqrt(population / 100);
-
-                    var latlng = [parseFloat(place.lat), parseFloat(place.lon)];
-                    var projected = project_mercator(latlng);
-
-                    var el = document.createElement('div');
-                    el.className = 'place admin-' + place.code.length;
-                    el.style.width = size + 'px';
-                    el.style.height = size + 'px';
-                    el.title = place.name;
-                    el.style.backgroundColor = "#40E0D0";
-                    el.style.zIndex = 1000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
-
-                    console.log(el);
-
-                    // adapt mercator coordinates to our viewport (derived experimentally)
-                    // center point of data to center point of map, and then apply scale factor (50000)
-                    var pos_x = (projected[0] - 0.5268) * 50000;
-                    var pos_y = (projected[1] - 0.646) * 50000;
-
-                    el.style.left = (pos_x - size / 2) + "px"; // could also use percent here
-                    el.style.bottom = (pos_y - size / 2) + "px";
-
-                    figure.appendChild(el);
-                }
+                console.log(place);
+                el_pop = draw_population(place)
+                el_inc = draw_income(place)
+                figure.appendChild(el_pop);
+                figure.appendChild(el_inc);
             }
         }
 
+
         // load data, call our function when loaded
         d3.csv('income-AT.csv', draw_map);
-
     </script>
 
 </body>
