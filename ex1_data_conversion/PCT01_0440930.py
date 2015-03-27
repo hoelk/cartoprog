@@ -43,8 +43,10 @@ def parse_field_latlng(x):
 def parse_places_data(sheet):
     for row in sheet:
         row['code'] = int(row['code'])
+        row['level'] = int(row['level'])
         row['lat'] = parse_field_latlng(row['latlng'])['lat']
         row['lon'] = parse_field_latlng(row['latlng'])['lon']
+        del row['latlng']
         try:
             row['population'] = int(row['population'])
         except ValueError:
@@ -54,24 +56,30 @@ def parse_places_data(sheet):
 sheet = read_xls_sheet(xlrd_sheet)
 parse_places_data(sheet)
 
-            #
-        #     # # convert numbers
-        #     # if row > 0:
-        #     #     row_data[0] = int(row_data[0])
-        #     #     row_data[1] = unicode(row_data[1]).encode('utf8')
-        #     #     row_data[7] = int(row_data[7])
-        #     #
-        #     #     # Dealt with empty strings
-        #     #     try:
-        #     #         row_data[4] = int(row_data[4])
-        #     #     except ValueError:
-        #     #         pass # do nothing
-        #
-        #     # if row == 0 or str(row_data[0])[0] == '2':  # string is like list so that accesses first letter!
-
 
 def print_sheet(dat):
-     for i in sheet:
-         print(i)
+     for row in sheet:
+         print(row)
 
 print_sheet(sheet)
+
+print(str(sheet[1].keys))
+
+for key in sheet[1].keys():
+    print(key)
+
+
+# write rows to the new file
+
+names = ['code', 'name', 'population', 'area', 'type', 'level', 'lat', 'lon']
+
+output = open('dict.csv', 'w', newline='')
+writer = csv.DictWriter(output, fieldnames = names)
+writer.writeheader()
+writer.writerows(sheet)
+
+
+#
+#
+# # close the file again
+# outfile.close()
