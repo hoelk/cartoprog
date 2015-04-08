@@ -16,6 +16,24 @@
             font-size: 1.5em;
         }
 
+        .legend {
+            position: relative;
+            width: 160px;
+            height: 120px;
+            border: 1px solid #dddddd;
+            background-color: #ffffff;
+        }
+
+        .legend .text {
+            font-family: sans-serif;
+            position: absolute;
+            left: 5px;
+        }
+
+        .legend .header {
+            font-weight: bold;
+        }
+
         .map {
             position: relative;
             width: 100%;
@@ -29,17 +47,15 @@
             border: 1px solid #cccccc;
             background-color: #dddddd;
             vertical-align: middle;
-            border-radius: 1000px;
             position: absolute;
         }
 
-        .map .place .bar {
-            display: inline-block;
-            border: 1px solid #cccccc;
-            background-color: #dddddd;
-            vertical-align: middle;
-            border-radius: 1px;
-            position: absolute;
+        .map .circle {
+            border-radius: 1000px;
+        }
+
+        .map .bar {
+
         }
 
         .map .admin-3 {}
@@ -50,7 +66,7 @@
 
 <body>
 
-    <h1>Austrian administrative units</h1>
+    <h1>Mean income of men and women in Austria</h1>
 
     <div class="map" id="map1">
     </div>
@@ -61,18 +77,6 @@
     <script src="mercator.js"></script>
 
     <script>
-        var county_colors = [
-            "#F0F8FF",
-            "#5F9EA0",
-            "#FFF8DC",
-            "#BDB76B",
-            "#E9967A",
-            "#F0E68C",
-            "#B0C4DE",
-            "#FFDEAD",
-            "#40E0D0"
-        ];
-
 
         function calc_position(place){
             var latlng = [parseFloat(place.lat), parseFloat(place.lon)];
@@ -91,14 +95,13 @@
             var pos = calc_position(place);
 
             var el = document.createElement('div');
-            el.className = 'place admin-' + place.code.length;
+            el.className = 'place circle admin-' + place.code.length;
             el.style.width = size + 'px';
             el.style.height = size + 'px';
             el.title = place.name;
-            el.style.backgroundColor = "#40E0D0";
             el.style.zIndex = 1000 - Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
 
-            el.style.left = (pos[0] - size / 2) + "px"; // could also use percent here
+            el.style.left = (pos[0] - size / 2) + "px";
             el.style.bottom = (pos[1] - size / 2) + "px";
 
             return el;
@@ -106,19 +109,19 @@
 
         function draw_income_m(place) {
             var variable = parseInt(place.income_med_m);
-            var county_code = parseInt(place.code[0]); // First digit gives county code
+            var county_code = parseInt(place.code[0]);
             var size = Math.sqrt(variable);
             var pos = calc_position(place);
 
             var el = document.createElement('div');
-            el.className = 'place admin-' + place.code.length;
+            el.className = 'place bar admin-' + place.code.length;
             el.style.width = 8 + 'px';
             el.style.height = size + 'px';
             el.title = place.name;
             el.style.backgroundColor = "#2222aa";
-            el.style.zIndex = 10000 + Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
+            el.style.zIndex = 10000 + Math.round(size);
 
-            el.style.left = pos[0]  + "px"; // could also use percent here
+            el.style.left = pos[0]  + "px";
             el.style.bottom = pos[1] + "px";
 
             return el;
@@ -126,19 +129,19 @@
 
         function draw_income_f(place) {
             var variable = parseInt(place.income_med_f);
-            var county_code = parseInt(place.code[0]); // First digit gives county code
+            var county_code = parseInt(place.code[0]);
             var size = Math.sqrt(variable);
             var pos = calc_position(place);
 
             var el = document.createElement('div');
-            el.className = 'place admin-' + place.code.length;
+            el.className = 'place bar admin-' + place.code.length;
             el.style.width = 8 + 'px';
             el.style.height = size + 'px';
             el.title = place.name;
             el.style.backgroundColor = "#aa2222";
-            el.style.zIndex = 10000 + Math.round(size); // ensure that small elements are put in front (css z-index becomes zIndex in JS)
+            el.style.zIndex = 10000 + Math.round(size);
 
-            el.style.left = pos[0]+9  + "px"; // could also use percent here
+            el.style.left = pos[0]+9  + "px";
             el.style.bottom = pos[1] + "px";
 
             return el;
@@ -159,9 +162,78 @@
                 figure.appendChild(el_pop);
                 figure.appendChild(el_inc_m);
                 figure.appendChild(el_inc_f);
-
             }
+
+            var legend = draw_legend()
+
+            figure.appendChild(legend);
+
         }
+
+        function draw_legend() {
+            console.log('drawing legend');
+
+            var legend = document.createElement('div');
+            legend.className = 'legend';
+
+            place =  { code: "000", name: "legend", lat: "0", lon: "0",
+                         population: "15000", area: "500", income_med: "2500",
+                         income_med_m: "500", income_med_f: "500" };
+
+            legend_items = { population: 'Population',
+                            income_m: 'Mean income (male)',
+                            income_f: 'Mean income (female)'}
+
+            var legend_item_pos = 25;
+
+            var header = document.createElement('div');
+            var header_text = document.createTextNode("Legend");
+
+            header.className = 'text header'
+
+            header.appendChild(header_text);
+            legend.appendChild(header);
+
+
+
+            //  http://stackoverflow.com/questions/9329446/for-each-over-an-array-in-javascript
+            for(key in legend_items){
+
+                var drawing_fun = 'draw_' + key;
+                var item = document.createElement('div');
+                var symbol = document.createElement('div');
+                var text_box = document.createElement('div');
+                var label = document.createTextNode(legend_items[key]);
+
+
+                // http://stackoverflow.com/questions/1723287/calling-a-javascript-function-named-in-a-variable
+                symbol = window[drawing_fun](place);
+
+                symbol.id = key;
+                symbol.style.position = 'absolute';
+                symbol.style.left = '5px';
+                symbol.style.top = legend_item_pos + 'px';
+
+                text_box.id = key;
+                text_box.className = 'text';
+                text_box.style.position = 'absolute';
+                text_box.style.left = '30px';
+                text_box.style.top = legend_item_pos + 'px';
+                text_box.style.width = '140px';
+                text_box.style.height = '14px';
+                text_box.appendChild(label);
+
+                item.appendChild(symbol);
+                item.appendChild(text_box);
+                legend.appendChild(item);
+
+                legend_item_pos += 30;
+
+            };
+
+            return(legend)
+            }
+
 
 
         // load data, call our function when loaded

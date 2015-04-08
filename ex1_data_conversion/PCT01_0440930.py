@@ -1,3 +1,5 @@
+# python 3
+
 __author__      = "Stefan Fleck"
 
 import xlrd, csv
