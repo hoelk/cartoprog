@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<title>Austrian administrative units</title>
+
+<style type="text/css">
+body {
+    font-size: 11px;
+}
+h1 {
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+.map {
+    width: 100%;
+    min-height: 512px;
+    border: 1px solid #dddddd;
+    background-color: #f8f8f8;
+}
+.map .admin-3,
+.map .admin-1 {
+    display: none;
+}
+.map path {
+    stroke: #333333;
+    stroke-width: 0.5;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<h1>Austrian administrative units</h1>
+
+<svg class="map" id="map1" viewBox="0 0 800 400">
+<g class="geometry"></g>
+</svg>
+
+<button id="populationButton">Population</button>
+<button id="areaButton">Area</button>
+
+<script src="d3.js"></script>
+
+<script>
+
+var projection = d3.geo.mercator();
+
+var width = 800;
+var height = 400;
+
+function draw_map(data, radiusFunction) {
+
+    var selection = d3.select('.map')
+        .selectAll('circle')
+        .data(data);
+
+    // what to do with NEW elements
+    selection.enter()
+        .append('circle')
+        .attr({
+            'fill-opacity': 0.5,
+            cx: function(d) {return projection([d.lon, d.lat])[0]},
+            cy: function(d) {return projection([d.lon, d.lat])[1]},
+            'class': function(d) { return 'place admin-' + d.code.length; }
+        });
+
+    // what to do with ALL elements
+    selection.transition()
+        .duration(800)
+        .attr({
+            r: radiusFunction
+        });
+}
+
+
+var populationScale = d3.scale.sqrt()
+    .domain([0,2000000])
+    .range([0,60])
+;
+var populationRadius = function(d) {
+    return populationScale(d.population);
+};
+
+var areaScale = d3.scale.sqrt()
+    .domain([0, 500])
+    .range([0,10])
+;
+var areaRadius = function(d) {
+    return areaScale(d.area);
+};
+
+var incomeColor = d3.scale.quantize()
+    .domain([1000,3000])
+    .range(["#fef0d9","#fdd49e","#fdbb84","#fc8d59","#ef6548","#d7301f","#990000"])
+;
+
+
+d3.json('bezirke.geojson', function(error, geometry) {
+
+    setup_projection(projection, geometry);
+
+    var pathGenerator = d3.geo.path()
+        .projection(projection);
+
+    d3.select('.map .geometry')
+        .selectAll('path')
+        .data(geometry.features)
+      .enter()
+        .append('path')
+        .attr({
+            d:  pathGenerator,
+            fill: function(d){return incomeColor(d.properties.income_med)}
+        });
+
+    d3.csv('places-AT-cleaned.csv', function(data) {
+        d3.select('#populationButton').on('click', function() {
+            draw_map(data, populationRadius);
+        });
+
+        d3.select('#areaButton').on('click', function() {
+            draw_map(data, areaRadius);
+        });
+
+        draw_map(data, populationRadius);
+    });
+
+});
+
+function setup_projection(projection, geometry) {
+
+    projection.translate([0,0]).scale(1);
+    var bounds = d3.geo.path().projection(projection).bounds(geometry);
+
+    var scale = 0.95 / Math.max(
+        (bounds[1][0] - bounds[0][0]) / width,
+        (bounds[1][1] - bounds[0][1]) / height
+    );
+    var translate = [
+        (width / 2 - (bounds[0][0] + bounds[1][0]) / 2 * scale),
+        (height / 2 - (bounds[0][1] + bounds[1][1]) / 2 * scale)
+    ];
+
+    projection
+		.scale(scale)
+		.translate(translate);
+
+}
+
+
+</script>
+
+</body>
+
+</html>

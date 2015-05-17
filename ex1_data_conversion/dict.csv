@@ -1,0 +1,600 @@
+code,name,population,area,type,level,lat,lon
+3,Niederösterreich,1625485,,Bundesland,3,48.33,15.75
+301,Krems an der Donau,23734,51.6149,Bezirk,5,48.4,15.58
+302,Sankt Pölten,50474,108.4756,Bezirk,5,48.2,15.62
+303,Waidhofen an der Ybbs,11824,131.5691,Bezirk,5,47.97,14.77
+304,Wiener Neustadt,39324,60.9731,Bezirk,5,47.8,16.25
+305,Amstetten,110211,1187.7887,Bezirk,5,48.0,14.77
+306,Baden,130670,753.3848,Bezirk,5,47.95,16.2
+307,Bruck an der Leitha,41028,494.9483,Bezirk,5,48.05,16.7
+308,Gänserndorf,67717,1271.2144,Bezirk,5,48.34,16.72
+309,Gmünd,39261,786.2447,Bezirk,5,48.75,15.08
+310,Hollabrunn,49987,1010.7235,Bezirk,5,48.58,16.08
+311,Horn,32049,783.9887,Bezirk,5,48.75,15.7
+312,Korneuburg,70651,626.5041,Bezirk,5,48.42,16.3
+313,Krems-Land,54661,923.9474,Bezirk,5,48.5,15.5
+314,Lilienfeld,27171,931.5543,Bezirk,5,47.92,15.6
+315,Melk,75808,1013.619,Bezirk,5,48.17,15.27
+316,Mistelbach,73026,1291.5113,Bezirk,5,48.58,16.5
+317,Mödling,109762,277.0162,Bezirk,5,48.07,16.25
+318,Neunkirchen,86408,1146.3582,Bezirk,5,47.65,16.03
+319,Sankt Pölten-Land,94841,1121.6102,Bezirk,5,48.2,15.7
+320,Scheibbs,41382,1023.5123,Bezirk,5,47.9,15.15
+321,Tulln,66141,658.0312,Bezirk,5,48.3,16.0
+322,Waidhofen an der Thaya,27629,669.1436,Bezirk,5,48.83,15.4
+323,Wiener Neustadt Land,72831,969.7194,Bezirk,5,47.8,16.25
+324,Wien-Umgebung,105476,484.4692,Bezirk,5,48.13,16.5
+325,Zwettl,44921,1399.7581,Bezirk,5,48.6,15.17
+30101,Krems an der Donau,23734,51.6149,Gemeinde,6,48.41,15.61
+30201,Sankt Pölten,50474,108.4756,Gemeinde,6,48.2,15.62
+30301,Waidhofen an der Ybbs,11824,131.5691,Gemeinde,6,47.96,14.77
+30401,Wiener Neustadt,39324,60.9731,Gemeinde,6,47.82,16.25
+30501,Allhartsberg,1893,21.3445,Gemeinde,6,48.03,14.79
+30502,Amstetten,22829,52.1667,Gemeinde,6,48.0,14.77
+30503,Ardagger,3285,47.1979,Gemeinde,6,48.17,14.82
+30504,Aschbach-Markt,3620,37.2107,Gemeinde,6,48.07,14.76
+30506,Behamberg,3155,20.3318,Gemeinde,6,48.03,14.5
+30507,Biberbach,2122,28.4051,Gemeinde,6,48.03,14.71
+30508,Ennsdorf,2451,7.6928,Gemeinde,6,48.21,14.49
+30509,Ernsthofen,2127,17.8118,Gemeinde,6,48.13,14.48
+30510,Ertl,1301,21.1342,Gemeinde,6,47.98,14.63
+30511,Euratsfeld,2407,30.6744,Gemeinde,6,48.08,14.93
+30512,Ferschnitz,1623,15.5393,Gemeinde,6,48.09,14.99
+30514,Haag,5299,54.919,Gemeinde,6,48.11,14.56
+30515,Haidershofen,3483,32.0075,Gemeinde,6,48.08,14.46
+30516,Hollenstein an der Ybbs,1826,126.42,Gemeinde,6,47.8,14.77
+30517,Kematen an der Ybbs,2456,10.9917,Gemeinde,6,48.03,14.77
+30520,Neuhofen an der Ybbs,2596,36.3788,Gemeinde,6,48.06,14.86
+30521,Neustadtl an der Donau,2081,47.9238,Gemeinde,6,48.19,14.9
+30522,Oed-Öhling,1516,10.6245,Gemeinde,6,48.1,14.76
+30524,Opponitz,990,39.665,Gemeinde,6,47.88,14.82
+30526,Sankt Georgen am Reith,561,40.0652,Gemeinde,6,47.84,14.88
+30527,Sankt Georgen am Ybbsfelde,2572,22.8796,Gemeinde,6,48.13,14.95
+30529,Sankt Pantaleon-Erla,2514,28.3197,Gemeinde,6,48.2,14.57
+30530,Sankt Peter in der Au,4921,59.8837,Gemeinde,6,48.03,14.6
+30531,Sankt Valentin,9075,45.5824,Gemeinde,6,48.17,14.53
+30532,Seitenstetten,3121,30.4611,Gemeinde,6,48.03,14.65
+30533,Sonntagberg,4093,18.4278,Gemeinde,6,48.0,14.76
+30534,Strengberg,2046,36.7967,Gemeinde,6,48.14,14.65
+30536,Viehdorf,1194,15.8915,Gemeinde,6,48.15,14.89
+30538,Wallsee-Sindelburg,2114,25.9431,Gemeinde,6,48.15,14.72
+30539,Weistrach,2234,35.7884,Gemeinde,6,48.05,14.58
+30541,Winklarn,1462,12.5919,Gemeinde,6,48.09,14.86
+30542,Wolfsbach,1821,30.9546,Gemeinde,6,48.08,14.67
+30543,Ybbsitz,3718,104.1905,Gemeinde,6,47.95,14.89
+30544,Zeillern,1705,21.573,Gemeinde,6,48.13,14.81
+30601,Alland,2379,68.707,Gemeinde,6,48.06,16.08
+30602,Altenmarkt an der Triesting,2068,63.5145,Gemeinde,6,48.02,15.99
+30603,Bad Vöslau,11064,38.735,Gemeinde,6,47.97,16.21
+30604,Baden,25075,26.8915,Gemeinde,6,48.0,16.23
+30605,Berndorf,8698,17.5739,Gemeinde,6,47.94,16.1
+30607,Ebreichsdorf,9194,43.198,Gemeinde,6,47.96,16.4
+30608,Enzesfeld-Lindabrunn,4055,15.7753,Gemeinde,6,47.91,16.18
+30609,Furth an der Triesting,805,64.2408,Gemeinde,6,47.97,15.97
+30612,Günselsdorf,1727,6.6116,Gemeinde,6,47.94,16.26
+30613,Heiligenkreuz,1390,29.4997,Gemeinde,6,48.06,16.13
+30614,Hernstein,1414,46.5946,Gemeinde,6,47.89,16.11
+30615,Hirtenberg,2488,1.4708,Gemeinde,6,47.93,16.18
+30616,Klausen-Leopoldsdorf,1463,60.0429,Gemeinde,6,48.09,16.02
+30618,Kottingbrunn,6878,11.6253,Gemeinde,6,47.95,16.23
+30620,Leobersdorf,4357,12.3532,Gemeinde,6,47.93,16.22
+30621,Mitterndorf an der Fischa,1740,10.769,Gemeinde,6,48.0,16.47
+30623,Oberwaltersdorf,3547,13.5996,Gemeinde,6,47.98,16.32
+30625,Pfaffstätten,2906,7.8142,Gemeinde,6,48.02,16.27
+30626,Pottendorf,6014,39.8389,Gemeinde,6,47.91,16.39
+30627,Pottenstein,2954,33.4047,Gemeinde,6,47.96,16.1
+30629,Reisenberg,1459,17.8017,Gemeinde,6,48.0,16.53
+30631,Schönau an der Triesting,1871,8.0675,Gemeinde,6,47.94,16.25
+30633,Seibersdorf,1309,20.2042,Gemeinde,6,47.96,16.52
+30635,Sooß,1117,5.4881,Gemeinde,6,47.99,16.21
+30636,Tattendorf,1261,14.3513,Gemeinde,6,47.96,16.3
+30637,Teesdorf,1600,7.305,Gemeinde,6,47.95,16.28
+30639,Traiskirchen,15808,29.0721,Gemeinde,6,48.02,16.3
+30641,Trumau,2626,18.5733,Gemeinde,6,48.0,16.34
+30645,Weissenbach an der Triesting,1684,15.9297,Gemeinde,6,47.98,16.04
+30646,Blumau-Neurißhof,1719,4.3314,Gemeinde,6,47.92,16.3
+30701,Au am Leithaberge,906,16.7112,Gemeinde,6,47.92,16.55
+30702,Bad Deutsch-Altenburg,1380,12.5694,Gemeinde,6,48.13,16.9
+30703,Berg,671,9.4588,Gemeinde,6,48.1,17.03
+30704,Bruck an der Leitha,7554,23.6902,Gemeinde,6,48.03,16.78
+30706,Enzersdorf an der Fischa,2826,31.3887,Gemeinde,6,48.08,16.61
+30708,Göttlesbrunn-Arbesthal,1361,26.2278,Gemeinde,6,48.06,16.72
+30709,Götzendorf an der Leitha,1909,25.3788,Gemeinde,6,48.01,16.58
+30710,Hainburg an der Donau,5628,25.046,Gemeinde,6,48.15,16.94
+30711,Haslau-Maria Ellend,1539,24.8027,Gemeinde,6,48.11,16.7
+30712,Höflein,1137,22.3772,Gemeinde,6,48.07,16.78
+30713,Hof am Leithaberge,1412,21.9938,Gemeinde,6,47.95,16.58
+30715,Hundsheim,567,13.4248,Gemeinde,6,48.12,16.93
+30716,Mannersdorf am Leithagebirge,3747,29.8996,Gemeinde,6,47.97,16.6
+30718,Petronell-Carnuntum,1187,25.3625,Gemeinde,6,48.11,16.87
+30719,Prellenkirchen,1326,41.5569,Gemeinde,6,48.08,16.96
+30721,Rohrau,1531,20.4924,Gemeinde,6,48.07,16.85
+30722,Scharndorf,1063,25.8438,Gemeinde,6,48.09,16.8
+30724,Sommerein,1855,41.5306,Gemeinde,6,47.99,16.66
+30726,Trautmannsdorf an der Leitha,2701,35.4154,Gemeinde,6,48.02,16.64
+30728,Wolfsthal,728,21.7777,Gemeinde,6,48.13,17.0
+30801,Aderklaa,185,8.6289,Gemeinde,6,48.28,16.53
+30802,Andlersdorf,119,5.9033,Gemeinde,6,48.18,16.67
+30803,Angern an der March,3303,38.1611,Gemeinde,6,48.38,16.83
+30804,Auersthal,1854,15.1857,Gemeinde,6,48.37,16.63
+30805,Bad Pirawarth,1521,25.4244,Gemeinde,6,48.45,16.59
+30808,Deutsch-Wagram,7011,30.6061,Gemeinde,6,48.3,16.56
+30810,Drösing,1168,29.5075,Gemeinde,6,48.54,16.9
+30811,Dürnkrut,2248,30.3935,Gemeinde,6,48.48,16.85
+30812,Ebenthal,824,18.1407,Gemeinde,6,48.43,16.78
+30813,Eckartsau,1136,48.9784,Gemeinde,6,48.14,16.8
+30814,Engelhartstetten,1877,65.6598,Gemeinde,6,48.18,16.89
+30817,Gänserndorf,8764,30.5622,Gemeinde,6,48.34,16.72
+30819,Glinzendorf,236,10.4344,Gemeinde,6,48.25,16.64
+30821,Groß-Enzersdorf,8532,83.9058,Gemeinde,6,48.2,16.55
+30822,Großhofen,88,6.1834,Gemeinde,6,48.26,16.62
+30824,Groß-Schweinbarth,1322,24.9451,Gemeinde,6,48.41,16.63
+30825,Haringsee,1152,27.1145,Gemeinde,6,48.19,16.79
+30826,Hauskirchen,1254,22.0229,Gemeinde,6,48.61,16.76
+30827,Hohenau an der March,2805,23.3784,Gemeinde,6,48.6,16.91
+30828,Hohenruppersdorf,900,21.3718,Gemeinde,6,48.46,16.66
+30829,Jedenspeigen,1118,23.2197,Gemeinde,6,48.5,16.87
+30830,Lassee,2361,55.6272,Gemeinde,6,48.23,16.82
+30831,Leopoldsdorf im Marchfelde,2390,28.9549,Gemeinde,6,48.22,16.69
+30834,Mannsdorf an der Donau,403,10.3136,Gemeinde,6,48.15,16.66
+30835,Marchegg,2858,45.5237,Gemeinde,6,48.28,16.91
+30836,Markgrafneusiedl,818,19.8193,Gemeinde,6,48.27,16.63
+30838,Matzen-Raggendorf,2554,35.5906,Gemeinde,6,48.41,16.66
+30841,Neusiedl an der Zaya,1259,17.6061,Gemeinde,6,48.6,16.79
+30842,Obersiebenbrunn,1537,26.9315,Gemeinde,6,48.27,16.71
+30844,Orth an der Donau,1971,33.4107,Gemeinde,6,48.15,16.7
+30845,Palterndorf-Dobermannsdorf,1249,18.6573,Gemeinde,6,48.59,16.82
+30846,Parbasdorf,146,10.2293,Gemeinde,6,48.28,16.59
+30848,Prottes,1288,13.7276,Gemeinde,6,48.38,16.74
+30849,Raasdorf,562,13.2092,Gemeinde,6,48.25,16.56
+30850,Ringelsdorf-Niederabsdorf,1393,32.4633,Gemeinde,6,48.57,16.86
+30852,Schönkirchen-Reyersdorf,1871,17.8862,Gemeinde,6,48.37,16.69
+30854,Spannberg,971,19.5583,Gemeinde,6,48.47,16.74
+30856,Strasshof an der Nordbahn,7534,11.6339,Gemeinde,6,48.32,16.64
+30857,Sulz im Weinviertel,1166,31.3744,Gemeinde,6,48.49,16.69
+30858,Untersiebenbrunn,1459,30.4901,Gemeinde,6,48.25,16.74
+30859,Velm-Götzendorf,755,17.7345,Gemeinde,6,48.47,16.78
+30860,Weikendorf,1940,46.3054,Gemeinde,6,48.34,16.77
+30863,Zistersdorf,5499,88.6641,Gemeinde,6,48.55,16.76
+30865,Weiden an der March,925,55.7756,Gemeinde,6,48.31,16.85
+30902,Amaliendorf-Aalfang,1168,8.0386,Gemeinde,6,48.83,15.08
+30903,Brand-Nagelberg,1774,36.6369,Gemeinde,6,48.85,14.99
+30904,Eggern,755,20.2103,Gemeinde,6,48.91,15.15
+30906,Eisgarn,674,22.5019,Gemeinde,6,48.92,15.1
+30908,Gmünd,5733,25.1053,Gemeinde,6,48.77,14.99
+30909,Großdietmanns,2176,39.9274,Gemeinde,6,48.67,14.97
+30910,Bad Großpertholz,1564,82.4013,Gemeinde,6,48.63,14.82
+30912,Großschönau,1271,41.9556,Gemeinde,6,48.65,14.94
+30913,Moorbad Harbach,691,35.5066,Gemeinde,6,48.7,14.8
+30915,Haugschlag,507,22.6562,Gemeinde,6,49.0,15.06
+30916,Heidenreichstein,4370,58.4262,Gemeinde,6,48.87,15.12
+30917,Hirschbach,606,7.8972,Gemeinde,6,48.74,15.13
+30920,Hoheneich,1530,15.5999,Gemeinde,6,48.77,15.03
+30921,Kirchberg am Walde,1453,37.7829,Gemeinde,6,48.73,15.09
+30925,Litschau,2368,81.0627,Gemeinde,6,48.94,15.05
+30929,Reingers,694,24.9203,Gemeinde,6,48.97,15.15
+30932,Sankt Martin,1157,49.3331,Gemeinde,6,48.66,14.84
+30935,Schrems,5696,60.8275,Gemeinde,6,48.79,15.07
+30939,Unserfrau-Altweitra,1022,40.1913,Gemeinde,6,48.72,14.88
+30940,Waldenstein,1213,22.7318,Gemeinde,6,48.73,15.02
+30942,Weitra,2839,52.5317,Gemeinde,6,48.7,14.89
+31001,Alberndorf im Pulkautal,710,9.8814,Gemeinde,6,48.7,16.1
+31008,Göllersdorf,2932,59.5469,Gemeinde,6,48.49,16.12
+31009,Grabern,1358,30.9424,Gemeinde,6,48.61,16.27
+31014,Guntersdorf,1103,28.4172,Gemeinde,6,48.65,16.05
+31015,Hadres,1695,34.4457,Gemeinde,6,48.71,16.14
+31016,Hardegg,1460,93.2778,Gemeinde,6,48.85,15.86
+31018,Haugsdorf,1654,21.2348,Gemeinde,6,48.71,16.08
+31019,Heldenberg,1104,27.3908,Gemeinde,6,48.49,15.94
+31021,Hohenwarth-Mühlbach a.M.,1263,43.6015,Gemeinde,6,48.5,15.82
+31022,Hollabrunn,11059,152.3328,Gemeinde,6,48.56,16.08
+31025,Mailberg,589,15.737,Gemeinde,6,48.67,16.18
+31026,Maissau,1856,43.1323,Gemeinde,6,48.57,15.82
+31028,Nappersdorf-Kammersdorf,1292,38.8662,Gemeinde,6,48.62,16.21
+31033,Pernersdorf,1013,25.8321,Gemeinde,6,48.7,16.02
+31035,Pulkau,1539,36.6655,Gemeinde,6,48.71,15.86
+31036,Ravelsbach,1735,26.359,Gemeinde,6,48.55,15.85
+31037,Retz,4142,45.0036,Gemeinde,6,48.76,15.95
+31038,Retzbach,1064,18.1601,Gemeinde,6,48.78,15.98
+31041,Schrattenthal,900,22.429,Gemeinde,6,48.72,15.91
+31042,Seefeld-Kadolz,973,21.8758,Gemeinde,6,48.71,16.18
+31043,Sitzendorf an der Schmida,2229,61.8369,Gemeinde,6,48.6,15.94
+31051,Wullersdorf,2399,63.9143,Gemeinde,6,48.63,16.1
+31052,Zellerndorf,2608,41.1276,Gemeinde,6,48.7,15.95
+31053,Ziersdorf,3310,48.7128,Gemeinde,6,48.52,15.92
+31101,Altenburg,820,28.1259,Gemeinde,6,48.65,15.59
+31102,Brunn an der Wild,842,32.0182,Gemeinde,6,48.69,15.52
+31103,Burgschleinitz-Kühnring,1432,41.8492,Gemeinde,6,48.6,15.78
+31104,Drosendorf-Zissersdorf,1293,53.46,Gemeinde,6,48.77,15.52
+31105,Eggenburg,3583,23.5338,Gemeinde,6,48.64,15.81
+31106,Gars am Kamp,3602,50.4658,Gemeinde,6,48.58,15.65
+31107,Geras,1400,67.6923,Gemeinde,6,48.78,15.67
+31109,Horn,6402,39.2412,Gemeinde,6,48.66,15.66
+31110,Irnfritz-Messern,1395,55.9631,Gemeinde,6,48.73,15.53
+31111,Japons,780,29.3809,Gemeinde,6,48.78,15.57
+31113,Langau,733,22.2155,Gemeinde,6,48.82,15.7
+31114,Meiseldorf,957,35.4329,Gemeinde,6,48.66,15.77
+31117,Pernegg,717,36.5629,Gemeinde,6,48.73,15.62
+31119,Röhrenbach,603,25.1189,Gemeinde,6,48.66,15.51
+31120,Röschitz,1037,21.1714,Gemeinde,6,48.67,15.89
+31121,Rosenburg-Mold,959,30.6639,Gemeinde,6,48.63,15.67
+31123,Sankt Bernhard-Frauenhofen,1269,29.4778,Gemeinde,6,48.69,15.58
+31124,Sigmundsherberg,1792,47.9563,Gemeinde,6,48.69,15.75
+31129,Weitersfeld,1668,87.1891,Gemeinde,6,48.78,15.81
+31130,Straning-Grafenberg,765,26.4696,Gemeinde,6,48.62,15.86
+31201,Bisamberg,4077,10.7342,Gemeinde,6,48.33,16.36
+31202,Enzersfeld,1477,9.8402,Gemeinde,6,48.36,16.42
+31203,Ernstbrunn,3006,80.7078,Gemeinde,6,48.53,16.36
+31204,Großmugl,1556,64.5046,Gemeinde,6,48.5,16.23
+31205,Großrußbach,2022,32.7432,Gemeinde,6,48.47,16.42
+31206,Hagenbrunn,1712,13.4911,Gemeinde,6,48.33,16.41
+31207,Harmannsdorf,3601,55.5359,Gemeinde,6,48.38,16.37
+31208,Hausleiten,3251,61.0337,Gemeinde,6,48.38,16.1
+31213,Korneuburg,11690,9.7157,Gemeinde,6,48.42,16.3
+31214,Langenzersdorf,7524,10.6853,Gemeinde,6,48.3,16.35
+31215,Leitzersdorf,1155,27.8742,Gemeinde,6,48.42,16.23
+31216,Leobendorf,4526,29.9714,Gemeinde,6,48.38,16.32
+31224,Rußbach,1345,30.6407,Gemeinde,6,48.46,16.05
+31226,Sierndorf,3338,55.0817,Gemeinde,6,48.42,16.15
+31227,Spillern,1886,12.6984,Gemeinde,6,48.38,16.25
+31228,Stetteldorf am Wagram,991,25.7491,Gemeinde,6,48.4,16.02
+31229,Stetten,1181,7.7331,Gemeinde,6,48.37,16.38
+31230,Stockerau,14800,37.4071,Gemeinde,6,48.39,16.21
+31234,Niederhollabrunn,1513,50.3567,Gemeinde,6,48.45,16.3
+31301,Aggsbach,674,13.7183,Gemeinde,6,48.32,15.4
+31302,Albrechtsberg an der Großen Krems,1068,28.731,Gemeinde,6,48.46,15.37
+31303,Bergern im Dunkelsteinerwald,1236,36.5339,Gemeinde,6,48.37,15.55
+31304,Dürnstein,906,16.8119,Gemeinde,6,48.38,15.52
+31308,Grafenegg,2923,28.547,Gemeinde,6,48.42,15.73
+31309,Furth bei Göttweig,2731,12.3863,Gemeinde,6,48.37,15.6
+31310,Gedersdorf,2103,18.8731,Gemeinde,6,48.43,15.69
+31311,Gföhl,3774,80.7221,Gemeinde,6,48.52,15.48
+31315,Hadersdorf-Kammern,1960,4.7954,Gemeinde,6,48.46,15.72
+31319,Jaidhof,1138,44.9302,Gemeinde,6,48.53,15.48
+31321,Krumau am Kamp,792,26.8369,Gemeinde,6,48.58,15.43
+31322,Langenlois,7039,67.1142,Gemeinde,6,48.47,15.67
+31323,Lengenfeld,1423,15.0163,Gemeinde,6,48.47,15.6
+31324,Lichtenau im Waldviertel,2050,58.3985,Gemeinde,6,48.5,15.39
+31326,Maria Laach am Jauerling,953,36.4472,Gemeinde,6,48.3,15.34
+31327,Mautern an der Donau,3280,9.1454,Gemeinde,6,48.39,15.58
+31330,Mühldorf,1442,28.4591,Gemeinde,6,48.37,15.35
+31333,Paudorf,2349,30.1012,Gemeinde,6,48.35,15.62
+31336,Rastenfeld,1368,47.6241,Gemeinde,6,48.57,15.32
+31337,Rohrendorf bei Krems,1737,9.7767,Gemeinde,6,48.42,15.65
+31338,Rossatz-Arnsdorf,1189,39.0362,Gemeinde,6,48.37,15.46
+31340,Sankt Leonhard am Hornerwald,1209,51.5863,Gemeinde,6,48.6,15.53
+31343,Senftenberg,1935,34.7638,Gemeinde,6,48.43,15.55
+31344,Spitz,1712,23.8215,Gemeinde,6,48.35,15.42
+31346,Straß im Straßertale,1499,22.4943,Gemeinde,6,48.47,15.73
+31347,Stratzing,805,5.8435,Gemeinde,6,48.45,15.6
+31350,Weinzierl am Walde,1306,44.5665,Gemeinde,6,48.42,15.43
+31351,Weißenkirchen in der Wachau,1450,23.2994,Gemeinde,6,48.38,15.47
+31355,Schönberg am Kamp,1786,53.2698,Gemeinde,6,48.52,15.7
+31356,Droß,824,10.2973,Gemeinde,6,48.47,15.57
+31401,Annaberg,662,63.5004,Gemeinde,6,47.87,15.38
+31402,Eschenau,1272,24.723,Gemeinde,6,48.03,15.57
+31403,Hainfeld,3798,44.7376,Gemeinde,6,48.03,15.77
+31404,Hohenberg,1570,56.6401,Gemeinde,6,47.91,15.62
+31405,Kaumberg,1023,42.9916,Gemeinde,6,48.02,15.88
+31406,Kleinzell,858,93.0932,Gemeinde,6,47.98,15.74
+31407,Lilienfeld,3061,53.9671,Gemeinde,6,47.92,15.6
+31408,Mitterbach am Erlaufsee,608,67.3163,Gemeinde,6,47.83,15.3
+31409,Ramsau,911,54.6985,Gemeinde,6,48.0,15.8
+31410,Rohrbach an der Gölsen,1560,14.7753,Gemeinde,6,48.06,15.74
+31411,Sankt Aegyd am Neuwalde,2229,184.6094,Gemeinde,6,47.85,15.55
+31412,Sankt Veit an der Gölsen,3928,78.14,Gemeinde,6,48.04,15.67
+31413,Traisen,3696,6.8395,Gemeinde,6,48.04,15.61
+31414,Türnitz,1995,145.5223,Gemeinde,6,47.93,15.49
+31502,Artstetten-Pöbring,1142,27.3057,Gemeinde,6,48.25,15.22
+31503,Bergland,1772,33.9287,Gemeinde,6,48.16,15.18
+31504,Bischofstetten,1167,18.9973,Gemeinde,6,48.12,15.47
+31505,Blindenmarkt,2411,17.0527,Gemeinde,6,48.13,14.99
+31506,Dorfstetten,627,33.1226,Gemeinde,6,48.33,14.98
+31507,Dunkelsteinerwald,2308,54.1821,Gemeinde,6,48.3,15.48
+31508,Erlauf,1127,9.6747,Gemeinde,6,48.18,15.18
+31509,Golling an der Erlauf,1615,2.7186,Gemeinde,6,48.2,15.18
+31511,Hofamt Priel,1653,39.6262,Gemeinde,6,48.18,15.0
+31513,Hürm,1714,36.0749,Gemeinde,6,48.16,15.41
+31514,Kilb,2527,45.1618,Gemeinde,6,48.1,15.41
+31515,Kirnberg an der Mank,993,17.6709,Gemeinde,6,48.07,15.32
+31516,Klein-Pöchlarn,994,6.8726,Gemeinde,6,48.22,15.22
+31517,Krummnußbaum,1399,10.0669,Gemeinde,6,48.21,15.16
+31519,Leiben,1348,12.5286,Gemeinde,6,48.23,15.27
+31520,Loosdorf,3608,11.9029,Gemeinde,6,48.2,15.4
+31521,Mank,2952,33.4329,Gemeinde,6,48.11,15.34
+31522,Marbach an der Donau,1675,10.6642,Gemeinde,6,48.21,15.15
+31523,Maria Taferl,863,12.1805,Gemeinde,6,48.22,15.15
+31524,Melk,5249,25.7137,Gemeinde,6,48.17,15.27
+31525,Münichreith-Laimbach,1718,38.8158,Gemeinde,6,48.2,15.27
+31527,Neumarkt an der Ybbs,1818,9.3315,Gemeinde,6,48.14,15.06
+31528,Nöchling,1007,19.5943,Gemeinde,6,48.22,14.98
+31530,Persenbeug-Gottsdorf,2213,8.3163,Gemeinde,6,48.19,15.09
+31531,Petzenkirchen,1294,2.8922,Gemeinde,6,48.15,15.16
+31533,Pöchlarn,3689,17.9528,Gemeinde,6,48.21,15.21
+31534,Pöggstall,2559,58.916,Gemeinde,6,48.32,15.2
+31535,Raxendorf,1073,36.2482,Gemeinde,6,48.34,15.28
+31537,Ruprechtshofen,2234,30.5682,Gemeinde,6,48.14,15.28
+31539,Sankt Leonhard am Forst,2996,43.4751,Gemeinde,6,48.14,15.29
+31540,Sankt Martin-Karlsbach,1671,24.9291,Gemeinde,6,48.16,15.04
+31541,Sankt Oswald,1126,32.1749,Gemeinde,6,48.27,15.04
+31542,Schönbühel-Aggsbach,1025,28.3589,Gemeinde,6,48.26,15.39
+31543,Schollach,921,19.691,Gemeinde,6,48.18,15.38
+31546,Weiten,1149,28.5223,Gemeinde,6,48.28,15.25
+31549,Ybbs an der Donau,5777,23.8268,Gemeinde,6,48.17,15.08
+31550,Zelking-Matzleinsdorf,1219,21.1918,Gemeinde,6,48.18,15.25
+31551,Texingtal,1587,32.445,Gemeinde,6,48.03,15.31
+31552,Yspertal,1850,47.674,Gemeinde,6,48.3,15.05
+31553,Emmersdorf an der Donau,1738,29.8163,Gemeinde,6,48.23,15.33
+31601,Altlichtenwarth,763,20.4571,Gemeinde,6,48.65,16.8
+31603,Asparn an der Zaya,1789,40.4872,Gemeinde,6,48.59,16.5
+31604,Bernhardsthal,1656,51.9985,Gemeinde,6,48.69,16.87
+31605,Bockfließ,1342,22.8742,Gemeinde,6,48.36,16.6
+31606,Drasenhofen,1134,35.1986,Gemeinde,6,48.75,16.65
+31608,Falkenstein,462,19.1701,Gemeinde,6,48.72,16.59
+31609,Fallbach,842,30.429,Gemeinde,6,48.66,16.41
+31611,Gaubitsch,919,22.4769,Gemeinde,6,48.66,16.38
+31612,Gaweinstal,3641,51.6526,Gemeinde,6,48.48,16.59
+31613,Gnadendorf,1188,48.2519,Gemeinde,6,48.62,16.4
+31614,Großebersdorf,2213,18.0188,Gemeinde,6,48.37,16.47
+31615,Groß-Engersdorf,1448,15.5751,Gemeinde,6,48.36,16.57
+31616,Großharras,1175,42.6714,Gemeinde,6,48.66,16.25
+31617,Großkrut,1620,38.4431,Gemeinde,6,48.64,16.72
+31620,Hausbrunn,858,16.1764,Gemeinde,6,48.63,16.83
+31621,Herrnbaumgarten,996,16.4844,Gemeinde,6,48.7,16.68
+31622,Hochleithen,1148,19.8432,Gemeinde,6,48.47,16.53
+31627,Kreuttal,1353,21.5105,Gemeinde,6,48.45,16.45
+31628,Kreuzstetten,1519,24.3158,Gemeinde,6,48.48,16.47
+31629,Laa an der Thaya,6031,72.9049,Gemeinde,6,48.72,16.38
+31630,Ladendorf,2160,50.0559,Gemeinde,6,48.53,16.48
+31633,Mistelbach,10907,131.3881,Gemeinde,6,48.58,16.5
+31634,Neudorf bei Staatz,1380,40.1368,Gemeinde,6,48.72,16.49
+31636,Niederleis,816,19.5148,Gemeinde,6,48.55,16.4
+31642,Pillichsdorf,1064,14.321,Gemeinde,6,48.36,16.54
+31644,Poysdorf,5514,97.248,Gemeinde,6,48.67,16.63
+31645,Rabensburg,1100,20.1675,Gemeinde,6,48.65,16.9
+31646,Schrattenberg,828,19.1488,Gemeinde,6,48.72,16.72
+31649,Staatz,1999,42.632,Gemeinde,6,48.68,16.49
+31650,Stronsdorf,1655,48.1659,Gemeinde,6,48.65,16.28
+31651,Ulrichskirchen-Schleinbach,2418,26.5037,Gemeinde,6,48.41,16.49
+31652,Unterstinkenbrunn,586,9.4254,Gemeinde,6,48.67,16.35
+31653,Wildendürnbach,1580,53.6274,Gemeinde,6,48.76,16.5
+31654,Wilfersdorf,2008,30.4757,Gemeinde,6,48.58,16.63
+31655,Wolkersdorf im Weinviertel,6759,44.37,Gemeinde,6,48.38,16.52
+31658,Ottenthal,613,15.3906,Gemeinde,6,48.76,16.58
+31701,Achau,1177,11.8776,Gemeinde,6,48.08,16.39
+31702,Biedermannsdorf,2902,8.9536,Gemeinde,6,48.08,16.35
+31703,Breitenfurt bei Wien,5478,26.9994,Gemeinde,6,48.13,16.15
+31704,Brunn am Gebirge,10204,7.2634,Gemeinde,6,48.11,16.28
+31706,Gaaden,1557,24.7779,Gemeinde,6,48.05,16.18
+31707,Gießhübl,1887,3.8945,Gemeinde,6,48.1,16.23
+31709,Gumpoldskirchen,3277,8.1087,Gemeinde,6,48.05,16.28
+31710,Guntramsdorf,8688,14.8638,Gemeinde,6,48.03,16.3
+31711,Hennersdorf,1440,5.4848,Gemeinde,6,48.1,16.37
+31712,Hinterbrühl,4044,16.938,Gemeinde,6,48.08,16.23
+31713,Kaltenleutgeben,3103,17.5038,Gemeinde,6,48.12,16.18
+31714,Laab im Walde,1153,7.1509,Gemeinde,6,48.16,16.18
+31715,Laxenburg,2671,10.5932,Gemeinde,6,48.07,16.36
+31716,Maria Enzersdorf,8464,5.3606,Gemeinde,6,48.1,16.28
+31717,Mödling,20609,9.9513,Gemeinde,6,48.07,16.25
+31718,Münchendorf,2289,19.9941,Gemeinde,6,48.03,16.38
+31719,Perchtoldsdorf,14116,12.5938,Gemeinde,6,48.12,16.27
+31723,Vösendorf,5490,10.4865,Gemeinde,6,48.12,16.33
+31725,Wiener Neudorf,8766,6.0601,Gemeinde,6,48.07,16.32
+31726,Wienerwald,2447,48.1602,Gemeinde,6,48.09,16.12
+31801,Altendorf,313,7.1928,Gemeinde,6,47.66,16.02
+31802,Aspang-Markt,1926,5.1916,Gemeinde,6,47.55,16.09
+31803,Aspangberg-Sankt Peter,2049,81.4256,Gemeinde,6,47.55,16.02
+31804,Breitenau,1267,9.5594,Gemeinde,6,47.73,16.14
+31805,Breitenstein,353,20.2779,Gemeinde,6,47.66,15.82
+31806,Buchbach,352,2.9949,Gemeinde,6,47.7,15.98
+31807,Edlitz,985,14.2318,Gemeinde,6,47.58,16.13
+31808,Enzenreith,1990,9.2088,Gemeinde,6,47.67,15.95
+31809,Feistritz am Wechsel,1108,23.7566,Gemeinde,6,47.6,16.05
+31810,Gloggnitz,6062,19.5543,Gemeinde,6,47.68,15.94
+31811,Grafenbach-Sankt Valentin,2314,13.9078,Gemeinde,6,47.68,16.01
+31812,Grimmenstein,1366,14.7466,Gemeinde,6,47.62,16.13
+31813,Grünbach am Schneeberg,1777,7.3685,Gemeinde,6,47.8,15.99
+31814,Kirchberg am Wechsel,2437,51.1877,Gemeinde,6,47.61,15.99
+31815,Mönichkirchen,608,16.3016,Gemeinde,6,47.51,16.04
+31817,Natschbach-Loipersbach,1607,10.5801,Gemeinde,6,47.71,16.11
+31818,Neunkirchen,11833,20.299,Gemeinde,6,47.65,16.03
+31820,Otterthal,573,6.1707,Gemeinde,6,47.62,15.95
+31821,Payerbach,2285,17.6737,Gemeinde,6,47.68,15.85
+31823,Pitten,2403,13.0792,Gemeinde,6,47.72,16.19
+31825,Prigglitz,502,17.9591,Gemeinde,6,47.7,15.92
+31826,Puchberg am Schneeberg,2754,83.1702,Gemeinde,6,47.78,15.9
+31827,Raach am Hochgebirge,299,13.2293,Gemeinde,6,47.63,15.93
+31829,Reichenau an der Rax,2842,89.4973,Gemeinde,6,47.7,15.83
+31830,Sankt Corona am Wechsel,380,8.6608,Gemeinde,6,47.58,16.0
+31831,Sankt Egyden am Steinfeld,1813,26.1627,Gemeinde,6,47.78,16.1
+31832,Scheiblingkirchen-Thernberg,1826,37.8263,Gemeinde,6,47.66,16.14
+31833,Schottwien,707,12.4907,Gemeinde,6,47.65,15.87
+31834,Schrattenbach,382,10.8202,Gemeinde,6,47.78,16.0
+31835,Schwarzau am Steinfeld,1853,9.7954,Gemeinde,6,47.73,16.17
+31836,Schwarzau im Gebirge,778,190.3239,Gemeinde,6,47.8,15.7
+31837,Seebenstein,1250,9.0935,Gemeinde,6,47.68,16.13
+31838,Semmering,639,8.6588,Gemeinde,6,47.63,15.82
+31839,Ternitz,15117,65.3444,Gemeinde,6,47.72,16.03
+31840,Thomasberg,1213,28.9752,Gemeinde,6,47.57,16.13
+31841,Trattenbach,563,30.9106,Gemeinde,6,47.6,15.87
+31842,Bürg-Vöstenhof,170,25.126,Gemeinde,6,47.72,15.97
+31843,Warth,1572,29.9574,Gemeinde,6,47.65,16.12
+31844,Wartmannstetten,1609,21.4308,Gemeinde,6,47.68,16.07
+31845,Willendorf,835,7.3136,Gemeinde,6,47.78,16.05
+31846,Wimpassing im Schwarzatale,1872,2.0673,Gemeinde,6,47.7,16.02
+31847,Würflach,1547,12.3256,Gemeinde,6,47.77,16.05
+31848,Zöbern,1472,31.57,Gemeinde,6,47.51,16.13
+31849,Höflein an der Hohen Wand,805,8.9405,Gemeinde,6,47.79,16.02
+31901,Altlengbach,2725,35.5861,Gemeinde,6,48.15,15.93
+31902,Asperhofen,1880,28.8811,Gemeinde,6,48.24,15.93
+31903,Böheimkirchen,4749,45.5531,Gemeinde,6,48.2,15.76
+31904,Brand-Laaben,1125,34.5757,Gemeinde,6,48.1,15.86
+31905,Eichgraben,3907,8.8827,Gemeinde,6,48.17,15.98
+31906,Frankenfels,2220,56.1243,Gemeinde,6,47.97,15.32
+31907,Gerersdorf,878,13.6578,Gemeinde,6,48.18,15.55
+31909,Hofstetten-Grünau,2597,35.9369,Gemeinde,6,48.09,15.5
+31910,Hafnerbach,1598,29.23,Gemeinde,6,48.22,15.48
+31911,Haunoldstein,897,9.8864,Gemeinde,6,48.2,15.45
+31912,Herzogenburg,7921,46.0532,Gemeinde,6,48.29,15.7
+31913,Inzersdorf-Getzersdorf,1410,13.6538,Gemeinde,6,48.32,15.67
+31915,Kapelln,1306,20.1906,Gemeinde,6,48.25,15.75
+31916,Karlstetten,2055,28.2537,Gemeinde,6,48.25,15.57
+31917,Kasten bei Böheimkirchen,1254,20.5134,Gemeinde,6,48.15,15.78
+31918,Kirchberg an der Pielach,3151,63.5132,Gemeinde,6,48.02,15.43
+31919,Kirchstetten,1900,17.761,Gemeinde,6,48.18,15.82
+31920,Loich,663,24.5162,Gemeinde,6,47.98,15.4
+31921,Maria-Anzbach,2652,18.2049,Gemeinde,6,48.19,15.93
+31922,Markersdorf-Haindorf,1900,16.6699,Gemeinde,6,48.18,15.48
+31923,Michelbach,925,24.9536,Gemeinde,6,48.1,15.75
+31925,Neidling,1407,18.5855,Gemeinde,6,48.24,15.55
+31926,Neulengbach,7323,51.638,Gemeinde,6,48.2,15.91
+31927,Neustift-Innermanzing,1382,14.9124,Gemeinde,6,48.13,15.89
+31928,Nußdorf ob der Traisen,1575,15.4713,Gemeinde,6,48.35,15.7
+31929,Ober-Grafendorf,4646,24.5761,Gemeinde,6,48.15,15.54
+31930,Obritzberg-Rust,2269,41.4703,Gemeinde,6,48.28,15.6
+31932,Prinzersdorf,1483,4.0576,Gemeinde,6,48.2,15.52
+31934,Pyhra,3352,66.7561,Gemeinde,6,48.16,15.69
+31935,Rabenstein an der Pielach,2455,36.2504,Gemeinde,6,48.05,15.47
+31938,Sankt Margarethen an der Sierning,1051,14.5788,Gemeinde,6,48.16,15.49
+31939,Schwarzenbach an der Pielach,421,45.4577,Gemeinde,6,47.95,15.38
+31940,Statzendorf,1377,12.4523,Gemeinde,6,48.31,15.64
+31941,Stössing,788,27.4728,Gemeinde,6,48.12,15.81
+31943,Traismauer,5822,43.1134,Gemeinde,6,48.35,15.73
+31945,Weinburg,1305,10.3588,Gemeinde,6,48.1,15.52
+31946,Weißenkirchen an der Perschling,1326,23.8029,Gemeinde,6,48.27,15.78
+31947,Wilhelmsburg,6616,45.763,Gemeinde,6,48.1,15.61
+31948,Wölbling,2530,32.2952,Gemeinde,6,48.31,15.57
+32001,Gaming,3592,244.0677,Gemeinde,6,47.93,15.09
+32002,Göstling an der Ybbs,2210,143.5785,Gemeinde,6,47.8,14.92
+32003,Gresten,1977,3.8265,Gemeinde,6,47.98,15.02
+32004,Gresten-Land,1540,55.495,Gemeinde,6,47.97,15.01
+32005,Lunz am See,1965,101.4387,Gemeinde,6,47.86,15.03
+32006,Oberndorf an der Melk,2991,42.8192,Gemeinde,6,48.06,15.22
+32007,Puchenstuben,334,41.2699,Gemeinde,6,47.93,15.29
+32008,Purgstall an der Erlauf,5257,55.9124,Gemeinde,6,48.05,15.13
+32009,Randegg,1948,51.8611,Gemeinde,6,48.0,14.97
+32010,Reinsberg,1005,29.5355,Gemeinde,6,47.98,15.07
+32011,Sankt Anton an der Jeßnitz,1286,69.6525,Gemeinde,6,47.96,15.21
+32012,Sankt Georgen an der Leys,1319,23.9035,Gemeinde,6,48.03,15.23
+32013,Scheibbs,4396,45.8519,Gemeinde,6,47.9,15.15
+32014,Steinakirchen am Forst,2349,34.9705,Gemeinde,6,48.07,15.05
+32015,Wang,1305,19.6676,Gemeinde,6,48.05,15.03
+32016,Wieselburg,3552,5.4288,Gemeinde,6,48.13,15.14
+32017,Wieselburg-Land,3044,33.9219,Gemeinde,6,48.13,15.13
+32018,Wolfpassing,1312,20.3111,Gemeinde,6,48.07,15.05
+32101,Absdorf,1769,15.9787,Gemeinde,6,48.4,15.98
+32104,Atzenbrugg,2534,25.9547,Gemeinde,6,48.29,15.9
+32106,Fels am Wagram,1957,29.522,Gemeinde,6,48.43,15.82
+32107,Grafenwörth,2675,46.4254,Gemeinde,6,48.4,15.78
+32109,Großriedenthal,956,18.8338,Gemeinde,6,48.48,15.87
+32110,Großweikersdorf,2856,43.3555,Gemeinde,6,48.47,15.98
+32112,Judenau-Baumgarten,2076,14.3565,Gemeinde,6,48.28,16.02
+32114,Kirchberg am Wagram,3355,60.2633,Gemeinde,6,48.43,15.88
+32115,Königsbrunn am Wagram,1273,28.5871,Gemeinde,6,48.42,15.93
+32116,Königstetten,1862,13.0789,Gemeinde,6,48.3,16.15
+32119,Langenrohr,2119,22.5773,Gemeinde,6,48.3,16.0
+32120,Michelhausen,2477,32.0206,Gemeinde,6,48.29,15.94
+32131,Sieghartskirchen,6808,61.6266,Gemeinde,6,48.25,16.0
+32132,Sitzenberg-Reidling,1952,22.1603,Gemeinde,6,48.27,15.89
+32134,Tulbing,2608,18.3871,Gemeinde,6,48.28,16.12
+32135,Tulln an der Donau,14070,72.2283,Gemeinde,6,48.3,16.0
+32139,Würmla,1230,20.4185,Gemeinde,6,48.26,15.86
+32140,Zeiselmauer-Wolfpassing,2003,12.689,Gemeinde,6,48.37,16.13
+32141,Zwentendorf an der Donau,3684,53.9,Gemeinde,6,48.34,15.91
+32142,Sankt Andrä-Wördern,6834,39.3308,Gemeinde,6,48.33,16.23
+32143,Muckendorf-Wipfing,1043,6.3368,Gemeinde,6,48.33,16.15
+32202,Dietmanns,1190,6.8678,Gemeinde,6,48.78,15.38
+32203,Dobersberg,1727,47.5999,Gemeinde,6,48.91,15.32
+32206,Gastern,1339,24.9819,Gemeinde,6,48.88,15.22
+32207,Groß-Siegharts,2993,44.2748,Gemeinde,6,48.78,15.4
+32209,Karlstein an der Thaya,1533,48.8747,Gemeinde,6,48.88,15.4
+32210,Kautzen,1241,35.4232,Gemeinde,6,48.92,15.23
+32212,Ludweis-Aigen,1032,51.2008,Gemeinde,6,48.78,15.49
+32214,Pfaffenschlag bei Waidhofen an der Thaya,975,29.6661,Gemeinde,6,48.83,15.18
+32216,Raabs an der Thaya,2950,134.6699,Gemeinde,6,48.85,15.5
+32217,Thaya,1454,43.3468,Gemeinde,6,48.85,15.28
+32219,Vitis,2592,55.5311,Gemeinde,6,48.75,15.17
+32220,Waidhofen an der Thaya,5764,46.0439,Gemeinde,6,48.83,15.4
+32221,Waidhofen an der Thaya-Land,1161,32.442,Gemeinde,6,48.83,15.4
+32222,Waldkirchen an der Thaya,618,42.7266,Gemeinde,6,48.93,15.35
+32223,Windigsteig,1060,25.4941,Gemeinde,6,48.77,15.28
+32301,Bad Fischau-Brunn,2749,20.6135,Gemeinde,6,47.83,16.16
+32302,Bad Schönau,749,13.585,Gemeinde,6,47.48,16.23
+32304,Ebenfurth,2698,23.5713,Gemeinde,6,47.87,16.37
+32305,Eggendorf,4201,20.5772,Gemeinde,6,47.85,16.32
+32306,Erlach,2633,9.1684,Gemeinde,6,47.72,16.22
+32307,Felixdorf,4252,2.4786,Gemeinde,6,47.88,16.23
+32308,Gutenstein,1454,104.2012,Gemeinde,6,47.87,15.88
+32309,Hochneukirchen-Gschaidt,1733,35.1307,Gemeinde,6,47.46,16.2
+32310,Hochwolkersdorf,1034,23.5372,Gemeinde,6,47.65,16.28
+32311,Hohe Wand,1341,24.6007,Gemeinde,6,47.82,16.07
+32312,Hollenthon,1040,23.8033,Gemeinde,6,47.58,16.25
+32313,Katzelsdorf,2977,16.2605,Gemeinde,6,47.78,16.28
+32314,Kirchschlag in der Buckligen Welt,2896,57.9721,Gemeinde,6,47.5,16.28
+32315,Krumbach,2201,43.9132,Gemeinde,6,47.52,16.18
+32316,Lanzenkirchen,3592,29.8022,Gemeinde,6,47.73,16.23
+32317,Lichtenegg,1079,35.4064,Gemeinde,6,47.6,16.2
+32318,Lichtenwörth,2925,22.8998,Gemeinde,6,47.83,16.28
+32319,Markt Piesting,2776,18.1762,Gemeinde,6,47.87,16.13
+32320,Matzendorf-Hölles,1765,14.1192,Gemeinde,6,47.89,16.21
+32321,Miesenbach,702,34.1204,Gemeinde,6,47.83,15.98
+32322,Muggendorf,524,50.9383,Gemeinde,6,47.9,15.93
+32323,Pernitz,2505,16.5871,Gemeinde,6,47.9,15.96
+32324,Rohr im Gebirge,492,80.591,Gemeinde,6,47.88,15.73
+32325,Bromberg,1241,30.8907,Gemeinde,6,47.67,16.2
+32326,Schwarzenbach,1032,22.3185,Gemeinde,6,47.63,16.35
+32327,Sollenau,4574,10.6935,Gemeinde,6,47.88,16.25
+32330,Theresienfeld,2613,11.4374,Gemeinde,6,47.85,16.23
+32331,Waidmannsfeld,1789,21.3862,Gemeinde,6,47.87,15.97
+32332,Waldegg,2006,35.7177,Gemeinde,6,47.87,16.03
+32333,Walpersbach,1037,16.4627,Gemeinde,6,47.72,16.23
+32334,Weikersdorf am Steinfelde,967,14.2202,Gemeinde,6,47.8,16.13
+32335,Wiesmath,1552,38.5684,Gemeinde,6,47.62,16.28
+32336,Winzendorf-Muthmannsdorf,1810,16.1653,Gemeinde,6,47.82,16.11
+32337,Wöllersdorf-Steinabrückl,4022,14.4632,Gemeinde,6,47.87,16.18
+32338,Zillingdorf,1870,15.3421,Gemeinde,6,47.85,16.33
+32401,Ebergassing,3499,16.2716,Gemeinde,6,48.03,16.52
+32402,Fischamend,4416,24.909,Gemeinde,6,48.12,16.6
+32403,Gablitz,4327,18.163,Gemeinde,6,48.22,16.15
+32404,Gerasdorf bei Wien,9069,35.2315,Gemeinde,6,48.28,16.47
+32405,Gramatneusiedl,2303,6.7253,Gemeinde,6,48.02,16.48
+32406,Himberg,5866,47.6355,Gemeinde,6,48.08,16.43
+32407,Klein-Neusiedl,838,5.9651,Gemeinde,6,48.08,16.6
+32408,Klosterneuburg,24861,76.1938,Gemeinde,6,48.3,16.33
+32409,Lanzendorf,1530,4.5435,Gemeinde,6,48.11,16.45
+32410,Leopoldsdorf,4004,6.9621,Gemeinde,6,48.11,16.39
+32411,Maria-Lanzendorf,2014,1.7005,Gemeinde,6,48.1,16.42
+32412,Mauerbach,3502,20.3092,Gemeinde,6,48.23,16.15
+32413,Moosbrunn,1533,16.9088,Gemeinde,6,48.02,16.45
+32415,Pressbaum,5982,58.8665,Gemeinde,6,48.18,16.08
+32416,Purkersdorf,8038,30.2489,Gemeinde,6,48.2,16.17
+32417,Rauchenwarth,628,13.4013,Gemeinde,6,48.08,16.52
+32418,Schwadorf,1835,11.3739,Gemeinde,6,48.07,16.58
+32419,Schwechat,15832,44.7189,Gemeinde,6,48.13,16.47
+32421,Tullnerbach,2453,20.2436,Gemeinde,6,48.2,16.1
+32423,Wolfsgraben,1492,17.3441,Gemeinde,6,48.15,16.12
+32424,Zwölfaxing,1454,6.7531,Gemeinde,6,48.1,16.47
+32501,Allentsteig,2059,71.6528,Gemeinde,6,48.68,15.32
+32502,Arbesbach,1772,55.0253,Gemeinde,6,48.48,14.95
+32503,Bärnkopf,384,47.6214,Gemeinde,6,48.4,15.0
+32504,Echsenbach,1231,23.1497,Gemeinde,6,48.72,15.22
+32505,Göpfritz an der Wild,1802,60.6279,Gemeinde,6,48.72,15.4
+32506,Grafenschlag,906,34.1847,Gemeinde,6,48.5,15.17
+32508,Groß-Gerungs,4737,105.9286,Gemeinde,6,48.57,14.95
+32509,Großgöttfritz,1475,40.1472,Gemeinde,6,48.53,15.18
+32511,Gutenbrunn,598,27.4007,Gemeinde,6,48.6,15.08
+32514,Kirchschlag,712,29.2995,Gemeinde,6,48.38,15.22
+32515,Kottes-Purk,1617,58.6197,Gemeinde,6,48.41,15.29
+32516,Langschlag,1855,61.0128,Gemeinde,6,48.58,14.88
+32517,Martinsberg,1188,33.7476,Gemeinde,6,48.37,15.15
+32518,Ottenschlag,1069,26.163,Gemeinde,6,48.7,15.15
+32519,Altmelon,917,38.3383,Gemeinde,6,48.45,14.97
+32520,Pölla,1014,104.3925,Gemeinde,6,48.37,15.27
+32521,Rappottenstein,1772,65.7627,Gemeinde,6,48.52,15.07
+32522,Sallingberg,1436,51.6275,Gemeinde,6,48.47,15.23
+32523,Schönbach,942,34.6344,Gemeinde,6,48.45,15.03
+32524,Schwarzenau,1514,28.1312,Gemeinde,6,48.73,15.25
+32525,Schweiggers,2027,58.6663,Gemeinde,6,48.67,15.07
+32528,Bad Traunstein,1059,47.4037,Gemeinde,6,48.44,15.11
+32529,Waldhausen,1311,39.9281,Gemeinde,6,48.52,15.26
+32530,Zwettl-Niederösterreich,11524,256.2925,Gemeinde,6,48.6,15.15
