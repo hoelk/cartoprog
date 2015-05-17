@@ -32,6 +32,7 @@
 
 </head>
 
+
 <body>
 
   <h1>Austrian administrative units</h1>
@@ -40,93 +41,114 @@
     <g class="geometry"></g>
   </svg>
 
-  <!-- Draw Button -->
-  <button id="incomeMed">Median Income</button>
-  <button id="incomeMedM">Median Income (Women)</button>
-  <button id="incomeMedF">Median Income (Men)</button>
+  <button id="incomeMed">Median income</button>
+    <button id="incomeMedM">Median income (Men)</button>
+    <button id="incomeMedF">Median income (Women)</button>
 
   <script src="d3.js"></script>
 
-
   <script>
     var projection = d3.geo.mercator();
-
     var width = 800;
     var height = 400;
-
-    function draw_map(data, radiusFunction) {
-      var selection = d3.select('.map')
-        .selectAll('circle')
-        .data(data);
-
-      // what to do with NEW elements
-      selection.enter()
-      // .append('circle')
-      .attr({
-        'fill-opacity': 0.5,
-        // cx: function(d) {return projection([d.lon, d.lat])[0]},
-        cy:
-        // function(d) {return projection([d.lon, d.lat])[1]},
-        'class':
-        // function(d) { return 'place admin-' + d.code.length; }
-      });
-
-      // what to do with ALL elements
-      selection.transition()
-      // .duration(800)
-      .attr({
-        r: radiusFunction
-      });
-    }
 
     var populationScale = d3.scale.sqrt()
       .domain([0, 2000000])
       .range([0, 60]);
+    var populationRadius = function(d) {
+      return populationScale(d.population);
+    };
 
     var areaScale = d3.scale.sqrt()
       .domain([0, 500])
       .range([0, 10]);
+    var areaRadius = function(d) {
+      return areaScale(d.area);
+    };
 
     var incomeColor = d3.scale.quantize()
       .domain([1000, 3000])
       .range(["#fef0d9", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#990000"]);
 
+
+     // because of setting up the projection you have to ensure that the functions
+     // load in the correct order
+
+
+    function draw_income(geometry, variable) {
+
+        console.log(variable)
+
+        var pathGenerator = d3.geo.path()
+          .projection(projection);
+
+        d3.select('.map .geometry')
+          .selectAll('path')
+          .data(geometry.features)
+          .enter()
+          .append('path')
+          .attr({
+            d: pathGenerator,
+            fill: function(d) {
+              return incomeColor(d.properties[[variable]])
+            }
+        });
+
+    }
+
+
+    function draw_income(geometry, variable) {
+
+        console.log(variable)
+
+        var pathGenerator = d3.geo.path()
+          .projection(projection);
+
+        var selection = d3.select('.map .geometry')
+          .selectAll('path')
+          .data(geometry.features)
+
+         selection.enter()
+          .append('path')
+          .attr({
+            d: pathGenerator,
+            fill: function(d) {
+              return incomeColor(d.properties[[variable]])
+            }
+        });
+
+        selection.transition()
+            .duration(400)
+            .attr({
+                d: pathGenerator,
+                fill: function(d) {
+                    return incomeColor(d.properties[[variable]])
+                }
+            });
+
+    }
+
+
     d3.json('bezirke_income.geojson', function(error, geometry) {
 
       setup_projection(projection, geometry);
 
-      var pathGenerator = d3.geo.path()
-        .projection(projection);
-
-      d3.select('.map .geometry')
-        .selectAll('path')
-        .data(geometry.features)
-        .enter()
-        .append('path')
-        .attr({
-          d: pathGenerator,
-          fill: function(d) {
-            return
-            incomeColor(d.properties.income_med)
-          }
-        });
+      draw_income(geometry, 'income_med');
 
 
-      // Define actions when buttons are clicked
       d3.csv('places-AT-cleaned.csv', function(data) {
         d3.select('button#incomeMed').on('click', function() {
-          console.log('incomeMed Button Clicked');
-        });
-
-        d3.select('button#incomeMedF').on('click', function() {
-            console.log('incomeMedF Button Clicked');
+            draw_income(geometry, 'income_med');
         });
 
         d3.select('button#incomeMedM').on('click', function() {
-            console.log('incomeMedM Button Clicked');
-          draw_map(data,
-            areaRadius);
+            draw_income(geometry,  'income_med_m');
         });
+
+        d3.select('button#incomeMedF').on('click', function() {
+            draw_income(geometry,  'income_med_f');
+        });
+
 
       });
 
@@ -135,16 +157,13 @@
     function setup_projection(projection, geometry) {
 
       projection.translate([0, 0]).scale(1);
-      var bounds =
-        d3.geo.path().projection(projection).bounds(geometry);
+      var bounds = d3.geo.path().projection(projection).bounds(geometry);
 
       var scale = 0.95 / Math.max(
         (bounds[1][0] - bounds[0][0]) / width, (bounds[1][1] - bounds[0][1]) / height
       );
       var translate = [
-        (width /
-          2 - (bounds[0][0] + bounds[1][0]) / 2 * scale), (height / 2 -
-          (bounds[0][1] + bounds[1][1]) / 2 * scale)
+        (width / 2 - (bounds[0][0] + bounds[1][0]) / 2 * scale), (height / 2 - (bounds[0][1] + bounds[1][1]) / 2 * scale)
       ];
 
       projection
