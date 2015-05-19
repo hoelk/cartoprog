@@ -4,12 +4,13 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Austrian administrative units</title>
+  <title>Austrian administrative units - Income by gender</title>
 
   <style type="text/css">
     body {
       font-size: 11px;
     }
+    
     h1 {
       font-family: sans-serif;
       font-size: 1.5em;
@@ -31,6 +32,7 @@
       stroke-width: 0.5;
     }
 
+    /* super-class for legend and info box */
     .box {
         position: absolute;
         top: 0px;
@@ -39,10 +41,10 @@
         padding-top: 5px;
         border: 1px solid #dddddd;
         background-color: #ffffff;
+        font-family: sans-serif;
     }
 
     .legend {
-        top: 0px;
         width: 120px;
     }
 
@@ -76,24 +78,6 @@
         position: absolute;
         top: 30px;
     }
-
-    .infoBox .text {
-        font-family: sans-serif;
-        position: absolute;
-    }
-
-    .infoBox .header {
-        font-weight: bold;
-    }
-
-    #infoBox1 {
-        top: 00px;
-        left: 200px;
-
-    }
-
-
-
   </style>
 
 </head>
@@ -101,7 +85,7 @@
 
 <body>
 
-  <h1>Austrian administrative units</h1>
+  <h1>Austrian administrative units - Income by gender</h1>
 
   <div class="mapWindow">
       <svg class="map" id="map1" viewBox="0 0 800 400">
@@ -116,11 +100,6 @@
 
   </div>
 
-
-
-
-
-
   <script src="d3.js"></script>
 
   <script>
@@ -131,7 +110,33 @@
       .domain([1000, 3000])
       .range(["#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac"]);
 
-    function draw_income(geometry, variable) {
+
+    // Draws everything once the bezirke data is loaded
+    d3.json('bezirke_income.geojson', function(error, geometry) {
+      setupProjection(projection, geometry);
+      drawIncome(geometry, 'income_med');
+      drawLegend();
+      drawInfoBox();
+    });
+
+
+    function setupProjection(projection, geometry) {
+        projection.translate([0, 0]).scale(1);
+        var bounds = d3.geo.path().projection(projection).bounds(geometry);
+        var scale = 0.95 / Math.max(
+        (bounds[1][0] - bounds[0][0]) / width, (bounds[1][1] - bounds[0][1]) / height
+        );
+        var translate = [
+        (width / 2 - (bounds[0][0] + bounds[1][0]) / 2 * scale), (height / 2 - (bounds[0][1] + bounds[1][1]) / 2 * scale)
+        ];
+
+        projection
+        .scale(scale)
+        .translate(translate);
+    }
+
+
+    function drawIncome(geometry, variable) {
         var pathGenerator = d3.geo.path()
           .projection(projection);
 
@@ -139,17 +144,17 @@
           .selectAll('path')
           .data(geometry.features)
 
-        // draw elements the first time
+        // Draw elements the first time
           selection.enter()
            .append('path')
            .attr({
              d: pathGenerator,
              fill: function(d) { // d refers to one element of data
-               return incomeColor(d.properties[[variable]])
+               return incomeColor(d.properties.income_med)
              }
          });
 
-         // change color elements
+        // Change the display variable when button is clicked
         selection.transition()
             .duration(400)
             .attr({
@@ -159,105 +164,33 @@
                 }
             });
 
-    }
-
-
-    d3.json('bezirke_income.geojson', function(error, geometry) {
-
-      // setup map
-      setup_projection(projection, geometry);
-      draw_income(geometry, 'income_med');
-      drawLegend();
-      drawInfoBox();
-
-      // Handle Buttons
-      d3.select('button#incomeMed').on('click', function() {
-            draw_income(geometry, 'income_med');
+        // Handle Click Events
+        d3.select('button#incomeMed').on('click', function() {
+            drawIncome(geometry, 'income_med');
         });
 
-      d3.select('button#incomeMedM').on('click', function() {
-            draw_income(geometry,  'income_med_m');
+        d3.select('button#incomeMedM').on('click', function() {
+            drawIncome(geometry,  'income_med_m');
         });
 
-      d3.select('button#incomeMedF').on('click', function() {
-            draw_income(geometry,  'income_med_f');
-        });
-    });
-
-    function setup_projection(projection, geometry) {
-
-      projection.translate([0, 0]).scale(1);
-      var bounds = d3.geo.path().projection(projection).bounds(geometry);
-
-      var scale = 0.95 / Math.max(
-        (bounds[1][0] - bounds[0][0]) / width, (bounds[1][1] - bounds[0][1]) / height
-      );
-      var translate = [
-        (width / 2 - (bounds[0][0] + bounds[1][0]) / 2 * scale), (height / 2 - (bounds[0][1] + bounds[1][1]) / 2 * scale)
-      ];
-
-      projection
-        .scale(scale)
-        .translate(translate);
-    }
-
-    function drawInfoBox(){
-
-        var infoBox = d3.select('.mapWindow')
-            .append('div')
-            .attr('class', 'box infoBox')
-
-        infoBox
-            .append('text')
-            .text('Info Box')
-            .attr('class', 'h1');
-
-            infoBox
-              .append('div')
-              .attr('class', 'infoText')
-              .append('text')
-              .text("Click on a district to display details");
-
-        d3.selectAll('path').on('click', function(d) {
-
-              d3.selectAll('.infoText').remove();
-
-              infoBox
-                .append('div')
-                .attr('class', 'infoText');
-
-              d3.select('.infoText')
-                .append('div')
-                .style('top', 90 + 'px')
-                .append('text')
-                .text(d.properties.name)
-                .append('div')
-                .append('text')
-                .text('Median income: ' + d.properties.income_med)
-                .append('div')
-                .append('text')
-                .text('Med. inc. (men): ' + d.properties.income_med_m)
-                .append('div')
-                .append('text')
-                .text('Med. inc. (women): ' + d.properties.income_med_f)
+        d3.select('button#incomeMedF').on('click', function() {
+            drawIncome(geometry,  'income_med_f');
         });
     }
+
 
     function drawLegend() {
-        console.log('drawing legend');
-
         var legend = d3.select('.mapWindow')
             .append('div')
             .attr('class', 'box legend')
+        var breaks = makeBreaksLabel(incomeColor);
+        var counter = 0;
+        var breaks = makeBreaksLabel(incomeColor);
 
         legend
             .append('text')
             .attr('class', 'h1')
             .text("Legend");
-
-        var breaks = makeBreaksLabel(incomeColor);
-        var counter = 0;        var breaks = makeBreaksLabel(incomeColor);
-
 
         for (i = 0; i < incomeColor.range().length; i++){
             legend
@@ -278,31 +211,64 @@
 
                 counter += 20;
             };
-    }
 
-    function makeBreaksLabel(x) {
-        var dom = x.domain();
-        var l = (dom[1] - dom[0])/x.range().length;
-        var breaks = d3.range(0, x.range().length)
-                        .map(function(i) { return i * l; });
+        function makeBreaksLabel(x) {
+            var dom = x.domain();
+            var l = (dom[1] - dom[0])/x.range().length;
+            var breaks = d3.range(0, x.range().length)
+                    .map(function(i) { return i * l; });
+            var breaksText = [];
 
-        var breaks_text = [];
+            for (i = 0; i < breaks.length-1; i++){
+                breaksText[i] = String(dom[0] + breaks[i]) + ' - ' + String( dom[0] + breaks[i+1]);
+            };
 
-        for (i = 0; i < breaks.length-1; i++){
-            breaks_text[i] = String(dom[0] + breaks[i]) + ' - ' + String( dom[0] + breaks[i+1]);
-        };
-
-        breaks_text[i] = String(dom[0] + breaks[i]) + '+';
-
-        console.log('breaks_text')
-        console.log(breaks_text)
-
-        return(breaks_text)
+            breaksText[i] = String(dom[0] + breaks[i]) + '+';
+            return(breaksText)
+        }
     }
 
 
+    function drawInfoBox(){
+        var infoBox = d3.select('.mapWindow')
+            .append('div')
+            .attr('class', 'box infoBox')
 
+        infoBox
+            .append('text')
+            .text('Info Box')
+            .attr('class', 'h1');
 
+        // Display info message before district is selected
+        infoBox
+            .append('div')
+            .attr('class', 'infoText')
+            .append('text')
+            .text("Click on a district to display details");
+
+        d3.selectAll('path').on('click', function(d) {
+            d3.selectAll('.infoText').remove();
+
+            infoBox
+                .append('div')
+                .attr('class', 'infoText');
+
+            d3.select('.infoText')
+                .append('div')
+                .style('top', 90 + 'px')
+                .append('text')
+                .text(d.properties.name)
+                .append('div')
+                .append('text')
+                .text('Median income: ' + d.properties.income_med)
+                .append('div')
+                .append('text')
+                .text('Med. inc. (men): ' + d.properties.income_med_m)
+                .append('div')
+                .append('text')
+                .text('Med. inc. (women): ' + d.properties.income_med_f)
+        });
+    }
 
   </script>
 
