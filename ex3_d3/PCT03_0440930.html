@@ -28,6 +28,27 @@
       stroke: #333333;
       stroke-width: 0.5;
     }
+
+    .legend {
+        position: relative;
+        width: 160px;
+        height: 120px;
+        border: 1px solid #dddddd;
+        background-color: #ffffff;
+    }
+
+    .legend .text {
+        font-family: sans-serif;
+        position: absolute;
+        left: 5px;
+    }
+
+    .legend .header {
+        font-weight: bold;
+    }
+
+
+
   </style>
 
 </head>
@@ -52,55 +73,11 @@
     var width = 800;
     var height = 400;
 
-    var populationScale = d3.scale.sqrt()
-      .domain([0, 2000000])
-      .range([0, 60]);
-    var populationRadius = function(d) {
-      return populationScale(d.population);
-    };
-
-    var areaScale = d3.scale.sqrt()
-      .domain([0, 500])
-      .range([0, 10]);
-    var areaRadius = function(d) {
-      return areaScale(d.area);
-    };
-
     var incomeColor = d3.scale.quantize()
       .domain([1000, 3000])
-      .range(["#fef0d9", "#fdd49e", "#fdbb84", "#fc8d59", "#ef6548", "#d7301f", "#990000"]);
-
-
-     // because of setting up the projection you have to ensure that the functions
-     // load in the correct order
-
+      .range(["#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac"]);
 
     function draw_income(geometry, variable) {
-
-        console.log(variable)
-
-        var pathGenerator = d3.geo.path()
-          .projection(projection);
-
-        d3.select('.map .geometry')
-          .selectAll('path')
-          .data(geometry.features)
-          .enter()
-          .append('path')
-          .attr({
-            d: pathGenerator,
-            fill: function(d) {
-              return incomeColor(d.properties[[variable]])
-            }
-        });
-
-    }
-
-
-    function draw_income(geometry, variable) {
-
-        console.log(variable)
-
         var pathGenerator = d3.geo.path()
           .projection(projection);
 
@@ -108,15 +85,17 @@
           .selectAll('path')
           .data(geometry.features)
 
-         selection.enter()
-          .append('path')
-          .attr({
-            d: pathGenerator,
-            fill: function(d) {
-              return incomeColor(d.properties[[variable]])
-            }
-        });
+        // draw elements the first time
+          selection.enter()
+           .append('path')
+           .attr({
+             d: pathGenerator,
+             fill: function(d) { // d refers to one element of data
+               return incomeColor(d.properties[[variable]])
+             }
+         });
 
+         // change color elements
         selection.transition()
             .duration(400)
             .attr({
@@ -131,28 +110,26 @@
 
     d3.json('bezirke_income.geojson', function(error, geometry) {
 
+      // setup map
       setup_projection(projection, geometry);
-
       draw_income(geometry, 'income_med');
+      draw_legend();
 
-
-      d3.csv('places-AT-cleaned.csv', function(data) {
-        d3.select('button#incomeMed').on('click', function() {
+      // Handle Buttons
+      d3.select('button#incomeMed').on('click', function() {
             draw_income(geometry, 'income_med');
         });
 
-        d3.select('button#incomeMedM').on('click', function() {
+      d3.select('button#incomeMedM').on('click', function() {
             draw_income(geometry,  'income_med_m');
         });
 
-        d3.select('button#incomeMedF').on('click', function() {
+      d3.select('button#incomeMedF').on('click', function() {
             draw_income(geometry,  'income_med_f');
         });
-
-
-      });
-
     });
+
+
 
     function setup_projection(projection, geometry) {
 
@@ -171,6 +148,51 @@
         .translate(translate);
 
     }
+
+
+    function draw_legend() {
+        console.log('drawing legend');
+
+        var legend = d3.select('svg#map1')
+            .append('g')
+            .attr('class', 'legend')
+            .attr('id', 'legend1')
+
+        legend
+            .append('rect')
+            .attr('width', 100)
+            .attr('height', 100)
+            .attr('fill', '#ffffff');
+
+        legend
+            .append('text')
+            .attr('x', 10)
+            .attr('y', 10)
+            .text("legend");
+
+            console.log(Object.keys(incomeColor))
+            console.log(incomeColor.range())
+
+            counter = 0
+
+            for (i = 0; i < incomeColor.range().length; i++){
+                console.log(incomeColor.range()[i])
+                 legend
+                    .append('text')
+                     .attr('x', 10)
+                     .attr('y', 30 + counter)
+                     .text(incomeColor.range()[i]);
+
+                counter += 20;
+            };
+
+
+
+    }
+
+
+
+
   </script>
 
 </body>
