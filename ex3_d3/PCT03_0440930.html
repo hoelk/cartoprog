@@ -58,9 +58,11 @@
 
   <h1>Austrian administrative units</h1>
 
+  <div id="map_window">
   <svg class="map" id="map1" viewBox="0 0 800 400">
     <g class="geometry"></g>
   </svg>
+  <div>
 
   <button id="incomeMed">Median income</button>
     <button id="incomeMedM">Median income (Men)</button>
@@ -72,7 +74,6 @@
     var projection = d3.geo.mercator();
     var width = 800;
     var height = 400;
-
     var incomeColor = d3.scale.quantize()
       .domain([1000, 3000])
       .range(["#f0f9e8", "#bae4bc", "#7bccc4", "#43a2ca", "#0868ac"]);
@@ -113,7 +114,8 @@
       // setup map
       setup_projection(projection, geometry);
       draw_income(geometry, 'income_med');
-      draw_legend();
+      drawLegend();
+      drawInfoBox();
 
       // Handle Buttons
       d3.select('button#incomeMed').on('click', function() {
@@ -127,9 +129,21 @@
       d3.select('button#incomeMedF').on('click', function() {
             draw_income(geometry,  'income_med_f');
         });
+
+        d3.selectAll('path').on('click', function(d) {
+              console.log(Object.keys(d))
+              console.log(d.properties)
+          });
     });
 
+    function drawInfoBox(){
+        d3.select('#infoBox')
+            .append('div')
+            .text('InfoBox')
 
+
+
+    }
 
     function setup_projection(projection, geometry) {
 
@@ -150,25 +164,48 @@
     }
 
 
-    function draw_legend() {
+    function makeBreaksLabel(x) {
+        var dom = x.domain();
+        var l = (dom[1] - dom[0])/x.range().length;
+        var breaks = d3.range(0, x.range().length)
+                        .map(function(i) { return i * l; });
+
+        var breaks_text = [];
+
+        for (i = 0; i < breaks.length-1; i++){
+            breaks_text[i] = String(breaks[i]) + ' - ' + String(breaks[i+1]);
+        };
+
+        breaks_text[i] = String(breaks[i]) + '+';
+
+        console.log('breaks_text')
+        console.log(breaks_text)
+
+        return(breaks_text)
+    }
+
+    function drawLegend() {
         console.log('drawing legend');
 
         var legend = d3.select('svg#map1')
             .append('g')
             .attr('class', 'legend')
-            .attr('id', 'legend1')
+            .attr('id', 'legend1');
+
+        var breaks = makeBreaksLabel(incomeColor);
 
         legend
             .append('rect')
-            .attr('width', 100)
-            .attr('height', 100)
-            .attr('fill', '#ffffff');
+            .attr('width', 110)
+            .attr('height', 140)
+            .attr('fill', '#ffffff')
+            .attr('stroke', 'black');
 
         legend
             .append('text')
             .attr('x', 10)
-            .attr('y', 10)
-            .text("legend");
+            .attr('y', 16)
+            .text("Legend");
 
             console.log(Object.keys(incomeColor))
             console.log(incomeColor.range())
@@ -178,10 +215,20 @@
             for (i = 0; i < incomeColor.range().length; i++){
                 console.log(incomeColor.range()[i])
                  legend
-                    .append('text')
+                    .append('rect')
+                     .attr('width', '10')
+                     .attr('height', '10')
                      .attr('x', 10)
                      .attr('y', 30 + counter)
-                     .text(incomeColor.range()[i]);
+                     .attr('fill', incomeColor.range()[i])
+                     .attr('stroke', 'black')
+                     .attr('strokeWidth', 1);
+
+                legend
+                    .append('text')
+                        .attr('x', 30)
+                        .attr('y', 40 + counter)
+                        .text(breaks[i]);
 
                 counter += 20;
             };
